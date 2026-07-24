@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background: #0077b6;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0,119,182,0.8),rgba(0,119,182,0.8)),
+    url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background: white;
+    color: #0077b6;
+    padding: 12px 25px;
+    margin: 20px 5px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 15px;
+    background: #f5faff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #0077b6;
+}
+
+/* Donate */
+#donate {
+    background: #0077b6;
+    color: white;
+}
+
+#donate h2 {
+    color: white;
+}
+
+button {
+    background: white;
+    color: #0077b6;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px;
+    }
+
+}
