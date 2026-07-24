@@ -187,3 +187,12 @@ button {
     border-radius:10px;
     max-width:220px;
 }
+/* Google Map */
+.map{
+    margin-top:30px;
+}
+
+.map iframe{
+    width:100%;
+    border-radius:12px;
+}
