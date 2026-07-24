@@ -171,3 +171,19 @@ button {
 .whatsapp-float:hover{
     transform:scale(1.1);
 }
+/* Donation Box */
+.donation-box{
+    margin-top:30px;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    color:#333;
+    display:inline-block;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.donation-box img{
+    margin:20px 0;
+    border-radius:10px;
+    max-width:220px;
+}
