@@ -306,11 +306,12 @@ button {
     text-align:center;
 }
 
-.loader-content img{
-    width:120px;
-    height:120px;
+..loader-content img{
+    width:70px;
+    height:70px;
     object-fit:contain;
     animation:zoom 1.5s infinite alternate;
+}
 }
 
 .loader-content h2{
