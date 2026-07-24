@@ -1,11 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Animated Counter
 
-    const buttons = document.querySelectorAll(".btn");
+const counters = document.querySelectorAll(".counter");
 
-    buttons.forEach(function(button){
-        button.addEventListener("click", function(){
-            console.log("Sky Foundation - Thank you for your support!");
-        });
-    });
+counters.forEach(counter => {
+
+    const updateCounter = () => {
+
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+
+        const increment = target / 100;
+
+        if (count < target) {
+
+            counter.innerText = Math.ceil(count + increment);
+
+            setTimeout(updateCounter, 20);
+
+        } else {
+
+            counter.innerText = target + "+";
+
+        }
+
+    };
+
+    updateCounter();
 
 });
