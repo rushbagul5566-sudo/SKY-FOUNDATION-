@@ -288,36 +288,4 @@ button {
     object-fit:contain;
     display:block;
 }
-/* Loading Screen */
-#loader{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:auto;
-    background:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
-}
-
-.loader-content{
-    text-align:center;
-}
-
-..loader-content img{
-    width:70px;
-    height:70px;
-    object-fit:contain;
-    
-}
-}
-
-.loader-content h2{
-    color:#0B5ED7;
-    margin-top:20px;
-}
-
-
-}
+/* 
