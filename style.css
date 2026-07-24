@@ -310,7 +310,7 @@ button {
     width:70px;
     height:70px;
     object-fit:contain;
-    animation:zoom 1.5s infinite alternate;
+    
 }
 }
 
