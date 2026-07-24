@@ -140,3 +140,11 @@ button {
     object-fit:cover;
     margin-bottom:15px;
     }
+/* Testimonials */
+#testimonials{
+    background:#f5faff;
+}
+
+#testimonials .card{
+    font-style:italic;
+    }
