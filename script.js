@@ -2,17 +2,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ==========================================================================
-       1. Preloader
-       ========================================================================== */
-    const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
+    //
+const preloader = document.getElementById('preloader');
+
+const hidePreloader = () => {
+    if (preloader && preloader.style.display !== 'none') {
+        preloader.style.opacity = '0';
         setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        }, 800);
+            preloader.style.display = 'none';
+        }, 500);
+    }
+};
+
+
+window.addEventListener('load', hidePreloader);
+
+setTimeout(hidePreloader, 2000);
     });
 
     /* ==========================================================================
