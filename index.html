@@ -1,347 +1,439 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Foundation | Health, Hope & Social Impact</title>
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Sky Foundation | Health, Hope & Social Impact">
-    <meta name="description" content="Sky Foundation is a dedicated NGO providing healthcare support, home medical care, community welfare, and free health camps to create a healthier, better society.">
-    <meta name="keywords" content="Sky Foundation, NGO, Healthcare Support, Home Care, Social Work, Medical Camps, Pune NGO, Volunteer">
+
+    <title>Sky Foundation | Serving Humanity with Care & Compassion</title>
+
+    <meta name="description"
+        content="Sky Foundation NGO - Healthcare, Education, Blood Donation, Social Welfare, Women Empowerment, Tree Plantation and Community Development.">
+
+    <meta name="keywords"
+        content="Sky Foundation, NGO, Maharashtra NGO, Healthcare, Blood Donation, Education, Charity">
+
     <meta name="author" content="Sky Foundation">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://skyfoundation.org.in/">
-    <meta property="og:title" content="Sky Foundation | Building a Healthier Society">
-    <meta property="og:description" content="सेवा, विश्वास आणि मानवतेसाठी एक नवीन दिशा - Sky Foundation provides essential healthcare and community support.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80">
+    <meta name="theme-color" content="#0ea5e9">
 
-    <!-- Fonts -->
+    <link rel="icon" href="assets/logo.png">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
-    
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
 
-</div>
+    <!-- Header -->
+    <header class="header">
 
-    <!-- Header / Navbar -->
-    <header id="header" class="header">
-        <div class="container nav-container">
-            <a href="#home" class="brand-logo">
-                <div class="logo-icon"><i class="ri-heart-pulse-fill"></i></div>
-                <div class="logo-text">
-                    <span class="brand-name">SKY</span>
-                    <span class="brand-sub">FOUNDATION</span>
+        <div class="container">
+
+            <a href="#" class="logo">
+
+                <img src="assets/logo.png" alt="Sky Foundation Logo">
+
+                <div>
+                    <h2>Sky Foundation</h2>
+                    <span>Serving Humanity</span>
                 </div>
+
             </a>
 
-            <nav class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#mission" class="nav-link">Our Mission</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                    <li><a href="#volunteer" class="nav-link">Volunteers</a></li>
-                    <li><a href="#donate" class="nav-link highlight">Donate</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+            <nav id="navbar">
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#services">Services</a></li>
+
+                    <li><a href="#gallery">Gallery</a></li>
+
+                    <li><a href="#events">Events</a></li>
+
+                    <li><a href="#volunteer">Volunteer</a></li>
+
+                    <li><a href="#donate">Donate</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
                 </ul>
+
             </nav>
 
-            <div class="nav-actions">
-                <a href="#donate" class="btn btn-primary btn-glass">
-                    <span>Donate Now</span>
-                    <i class="ri-heart-fill"></i>
-                </a>
-                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <button id="menu-btn">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
         </div>
+
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-bg">
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80" alt="Healthcare and Social Service">
-                <div class="hero-overlay"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+            <span class="tag">
+                ❤️ NGO • Healthcare • Humanity
+            </span>
+
+            <h1>
+                Together We Can Build
+                <span>A Better Tomorrow</span>
+            </h1>
+
+            <p>
+                Sky Foundation is committed to Healthcare,
+                Education, Blood Donation,
+                Social Welfare and Community Development
+                across Maharashtra.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#donate" class="btn primary">
+                    Donate Now
+                </a>
+
+                <a href="#volunteer" class="btn secondary">
+                    Become Volunteer
+                </a>
+
             </div>
 
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <div class="badge-pill">
-                        <i class="ri-shield-cross-fill"></i> Dedicated to Healthcare & Community Support
-                    </div>
-                    <h2 class="marathi-tagline">"सेवा, विश्वास आणि मानवतेसाठी एक नवीन दिशा"</h2>
-                    <h1 class="hero-title">Building a Healthier, Stronger & Better Society</h1>
-                    <p class="hero-desc">
-                        Sky Foundation brings modern medical care, compassionate support, and community assistance directly to those who need it most. Together, we heal, empower, and transform lives.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#volunteer" class="btn btn-primary btn-lg">
-                            <span>Join Us</span>
-                            <i class="ri-user-add-line"></i>
-                        </a>
-                        <a href="#donate" class="btn btn-secondary btn-lg">
-                            <span>Donate Now</span>
-                            <i class="ri-heart-line"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-outline btn-lg">
-                            <span>Contact Us</span>
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <div class="hero-scroll-down">
-                <a href="#about"><i class="ri-arrow-down-s-line"></i></a>
-            </div>
-        </section>
-
+    </section>
         <!-- About Section -->
-        <section id="about" class="section about-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="sub-title">Who We Are</span>
-                    <h2 class="section-title">Committed to Health, Hope & Human Dignity</h2>
-                    <div class="title-line"></div>
-                </div>
 
-                <div class="about-grid">
-                    <div class="about-card glass-card">
-                        <div class="card-icon"><i class="ri-team-line"></i></div>
-                        <h3>Who We Are</h3>
-                        <p>Sky Foundation is a non-profit healthcare and social impact organization dedicated to bridging the gap between medical necessities and vulnerable communities. We blend professional care with deep empathy.</p>
-                    </div>
+    <section id="about" class="about">
 
-                    <div id="mission" class="about-card glass-card">
-                        <div class="card-icon"><i class="ri-eye-line"></i></div>
-                        <h3>Our Vision</h3>
-                        <p>To create a society where quality healthcare, dignifying elderly support, and essential medical resources are accessible to every individual, regardless of their socioeconomic status.</p>
-                    </div>
+        <div class="container">
 
-                    <div class="about-card glass-card">
-                        <div class="card-icon"><i class="ri-flag-line"></i></div>
-                        <h3>Our Mission</h3>
-                        <p>Delivering sustainable home healthcare support, organizing rural medical camps, providing emergency aid, and fostering a passionate volunteer network committed to human service.</p>
-                    </div>
+            <div class="section-title">
 
-                    <div class="about-card glass-card">
-                        <div class="card-icon"><i class="ri-heart-3-line"></i></div>
-                        <h3>Our Values</h3>
-                        <p>Empathy, Transparency, Quality Healthcare, Selfless Service, and Unwavering Commitment to dignity for senior citizens, patients, and marginalized families.</p>
-                    </div>
-                </div>
+                <span>About Sky Foundation</span>
+
+                <h2>Serving Humanity with Care & Compassion</h2>
+
+                <p>
+                    Sky Foundation is a non-profit organization dedicated to improving
+                    healthcare, education, environmental protection and social welfare
+                    across Maharashtra.
+                </p>
+
             </div>
-        </section>
 
-        <!-- Impact Statistics Section -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon"><i class="ri-home-heart-line"></i></div>
-                        <div class="stat-number" data-target="2500">0</div>
-                        <div class="stat-plus">+</div>
-                        <p class="stat-label">Families Served</p>
-                    </div>
+            <div class="about-grid">
 
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon"><i class="ri-stethoscope-line"></i></div>
-                        <div class="stat-number" data-target="8000">0</div>
-                        <div class="stat-plus">+</div>
-                        <p class="stat-label">Patients Supported</p>
-                    </div>
+                <div class="about-card">
 
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon"><i class="ri-user-star-line"></i></div>
-                        <div class="stat-number" data-target="450">0</div>
-                        <div class="stat-plus">+</div>
-                        <p class="stat-label">Active Volunteers</p>
-                    </div>
+                    <i class="fas fa-hand-holding-heart"></i>
 
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon"><i class="ri-hospital-line"></i></div>
-                        <div class="stat-number" data-target="120">0</div>
-                        <div class="stat-plus">+</div>
-                        <p class="stat-label">Medical Camps</p>
-                    </div>
+                    <h3>Our Mission</h3>
 
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon"><i class="ri-calendar-event-line"></i></div>
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-plus">+</div>
-                        <p class="stat-label">Years of Service</p>
-                    </div>
+                    <p>
+                        To provide quality healthcare, education and social support
+                        for every needy person while promoting humanity and equality.
+                    </p>
+
                 </div>
+
+                <div class="about-card">
+
+                    <i class="fas fa-eye"></i>
+
+                    <h3>Our Vision</h3>
+
+                    <p>
+                        Building a healthy, educated and empowered society where
+                        everyone has equal opportunities.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <i class="fas fa-users"></i>
+
+                    <h3>Our Values</h3>
+
+                    <p>
+                        Compassion, Integrity, Transparency, Respect,
+                        Teamwork and Social Responsibility.
+                    </p>
+
+                </div>
+
             </div>
-        </section>
 
-        <!-- Services Section -->
-        <section id="services" class="section services-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="sub-title">What We Do</span>
-                    <h2 class="section-title">Comprehensive Healthcare & Community Services</h2>
-                    <div class="title-line"></div>
-                </div>
+        </div>
 
-                <div class="services-grid">
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-nurse-line"></i></div>
-                        <h3>Home Healthcare Support</h3>
-                        <p>Professional bedside nursing, wound care, and personalized medical assistance right in the comfort of patients' homes.</p>
-                    </div>
+    </section>
 
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-health-book-line"></i></div>
-                        <h3>Patient Care Services</h3>
-                        <p>Dedicated post-operative care, chronic disease monitoring, and daily living assistance for recovering patients.</p>
-                    </div>
+    <!-- Impact -->
 
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-wheelchair-line"></i></div>
-                        <h3>Elderly Care</h3>
-                        <p>Compassionate physical and emotional care for senior citizens, ensuring safety, dignity, and proper health management.</p>
-                    </div>
+    <section class="impact">
 
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-first-aid-kit-line"></i></div>
-                        <h3>Medical Assistance</h3>
-                        <p>Helping underprivileged patients access essential medicines, diagnostic tests, and specialized equipment.</p>
-                    </div>
+        <div class="container">
 
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-megaphone-line"></i></div>
-                        <h3>Health Awareness Programs</h3>
-                        <p>Educational workshops on preventive care, hygiene, nutrition, maternal health, and lifestyle disease control.</p>
-                    </div>
+            <div class="impact-box">
 
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-community-line"></i></div>
-                        <h3>Free Medical Camps</h3>
-                        <p>Regular health checkup drives in rural and underserved urban pockets, offering free doctor consultations and medications.</p>
-                    </div>
+                <div class="counter">
 
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-user-md-line"></i></div>
-                        <h3>Doctor Consultation Support</h3>
-                        <p>Connecting patients with qualified specialist physicians for tele-consultation and second opinions.</p>
-                    </div>
+                    <h2>5000
+                            <!-- Services Section -->
 
-                    <div class="service-card glass-card">
-                        <div class="service-icon"><i class="ri-alarm-warning-line"></i></div>
-                        <h3>Emergency Support</h3>
-                        <p>Rapid coordination during medical emergencies, helping families navigate urgent hospitalizations and blood supply.</p>
-                    </div>
-                </div>
+    <section id="services" class="services">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>Our Services</span>
+                <h2>What We Do</h2>
+                <p>
+                    Sky Foundation works in multiple social sectors to improve lives
+                    and build a better future.
+                </p>
             </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="sub-title">Our Initiatives</span>
-                    <h2 class="section-title">Key Social & Healthcare Projects</h2>
-                    <div class="title-line"></div>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Healthcare</h3>
+                    <p>Medical camps, home healthcare support and patient care.</p>
                 </div>
 
-                <div class="projects-grid">
-                    <div class="project-card glass-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" alt="Rural Health Program">
-                            <span class="project-badge">Healthcare</span>
-                        </div>
-                        <div class="project-body">
-                            <h3>Rural Health & Sanitation Initiative</h3>
-                            <p>Mobile healthcare clinics providing free screenings and essential diagnostic kits to remote village communities.</p>
-                            <a href="#contact" class="btn-text">View More <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card glass-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80" alt="Community Support">
-                            <span class="project-badge">Community</span>
-                        </div>
-                        <div class="project-body">
-                            <h3>Arogya Sanjeevani Camps</h3>
-                            <p>Comprehensive health assessment drives focused on women, children, and senior citizens with free medicine distribution.</p>
-                            <a href="#contact" class="btn-text">View More <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card glass-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Elderly Support">
-                            <span class="project-badge">Elderly Care</span>
-                        </div>
-                        <div class="project-body">
-                            <h3>Golden Years Dignity Program</h3>
-                            <p>Providing holistic home visits, physiotherapy support, and companion care for isolated elderly citizens.</p>
-                            <a href="#contact" class="btn-text">View More <i class="ri-arrow-right-line"></i></a>
-                        </div>
-                    </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>Educational support, scholarships and awareness programs.</p>
                 </div>
+
+                <div class="service-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Blood Donation</h3>
+                    <p>Blood donation drives and emergency donor support.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-tree"></i>
+                    <h3>Tree Plantation</h3>
+                    <p>Environmental protection through plantation campaigns.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Disaster Relief</h3>
+                    <p>Emergency relief, food and essential support during disasters.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-people-group"></i>
+                    <h3>Community Welfare</h3>
+                    <p>Supporting women, children, senior citizens and needy families.</p>
+                </div>
+
             </div>
-        </section>
 
+        </div>
+
+    </section>
         <!-- Gallery Section -->
-        <section id="gallery" class="section gallery-section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="sub-title">Visual Journey</span>
-                    <h2 class="section-title">Moments of Care & Impact</h2>
-                    <div class="title-line"></div>
-                </div>
 
-                <div class="gallery-grid">
-                    <div class="gallery-item glass-card" data-src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Doctor Consultation">
-                        <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
-                    </div>
-                    <div class="gallery-item glass-card" data-src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80">
-                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Patient Care">
-                        <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
-                    </div>
-                    <div class="gallery-item glass-card" data-src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Healthcare Worker">
-                        <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
-                    </div>
-                    <div class="gallery-item glass-card" data-src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1200&q=80">
-                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" alt="Volunteer Work">
-                        <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
-                    </div>
-                    <div class="gallery-item glass-card" data-src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Medical Camp Checkup">
-                        <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
-                    </div>
-                    <div class="gallery-item glass-card" data-src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80">
-                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=600&q=80" alt="Community Health Drive">
-                        <div class="gallery-overlay"><i class="ri-zoom-in-line"></i></div>
-                    </div>
-                </div>
+    <section id="gallery" class="gallery">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>Our Gallery</span>
+                <h2>Moments That Inspire</h2>
+                <p>Some memorable moments from Sky Foundation activities.</p>
             </div>
-        </section>
 
-        <!-- Lightbox Modal -->
-        <div id="lightbox" class="lightbox">
-            <span class="lightbox-close">&times;</span>
-      
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery1.jpg" alt="Gallery 1">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery2.jpg" alt="Gallery 2">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery3.jpg" alt="Gallery 3">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery4.jpg" alt="Gallery 4">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery5.jpg" alt="Gallery 5">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/gallery/gallery6.jpg" alt="Gallery 6">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
+
+    <section id="events" class="events">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>Upcoming Events</span>
+                <h2>Join Our Campaigns</h2>
+            </div>
+
+            <div class="events-grid">
+
+                <div class="event-card">
+                    <h3>Blood Donation Camp</h3>
+                    <p>Donate blood and save lives.</p>
+                </div>
+
+                <div class="event-card">
+                    <h3>Tree Plantation Drive</h3>
+                    <p>Let's make Maharashtra greener.</p>
+                </div>
+
+                <div class="event-card">
+                    <h3>Free Health Check-up</h3>
+                    <p>Health screening for all citizens.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+            </section>
+                <!-- Volunteer Section -->
+    <section id="volunteer" class="volunteer">
+        <div class="container">
+            <div class="section-title">
+                <span>Join Us</span>
+                <h2>Become a Volunteer</h2>
+                <p>Fill out the form below and become a part of Sky Foundation.</p>
+            </div>
+
+            <form class="volunteer-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="City">
+                <textarea placeholder="Why do you want to join?" rows="5"></textarea>
+                <button type="submit" class="btn primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="donate">
+        <div class="container">
+            <div class="section-title">
+                <span>Support Us</span>
+                <h2>Donate for Humanity</h2>
+                <p>Your contribution helps us serve more people.</p>
+            </div>
+
+            <div class="donate-box">
+                <img src="assets/qr.png" alt="UPI QR Code">
+                <h3>Scan & Donate</h3>
+                <p>UPI / Bank Details can be added here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Contact</span>
+                <h2>Get In Touch</h2>
+            </div>
+
+            <div class="contact-info">
+
+                <p><i class="fas fa-map-marker-alt"></i> Karanjkhed, Tal. Kannad, Dist. Chhatrapati Sambhajinagar, Maharashtra</p>
+
+                <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
+
+                <p><i class="fas fa-envelope"></i> info@skyfoundation.org</p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+
+            <h2>Sky Foundation</h2>
+
+            <p>Serving Humanity with Care & Compassion.</p>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <p class="copyright">
+                © 2026 Sky Foundation. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="#" class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back To Top -->
+    <button id="topBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+                    </html>
