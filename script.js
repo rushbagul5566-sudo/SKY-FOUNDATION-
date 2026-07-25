@@ -1,111 +1,117 @@
-
-// ===============================
-// SKY FOUNDATION - script.js
-// ===============================
+// ===========================
+// SKY FOUNDATION SCRIPT
+// ===========================
 
 // Mobile Menu
 const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
+const nav = document.querySelector("nav");
 
-if (menuBtn && navLinks) {
+if (menuBtn && nav) {
     menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        nav.classList.toggle("active");
     });
 }
 
-// Close menu after clicking a link
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
-});
-
 // Sticky Header
-const header = document.querySelector(".header");
+const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
-        header.style.background = "#ffffff";
+    if (window.scrollY > 80) {
+        header.classList.add("sticky");
     } else {
-        header.style.boxShadow = "none";
-        header.style.background = "rgba(255,255,255,.95)";
+        header.classList.remove("sticky");
     }
 });
 
-// Back To Top Button
-const topBtn = document.querySelector(".top-btn");
+// Scroll Animation
+const elements = document.querySelectorAll(
+".feature-box,.mission-card,.service-card,.project-card,.why-box"
+);
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        topBtn.style.display = "flex";
-    } else {
-        topBtn.style.display = "none";
-    }
-});
+const observer = new IntersectionObserver((entries) => {
 
-// Smooth Fade Animation
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
             entry.target.classList.add("show");
+
         }
+
     });
-},{
+
+}, {
+
     threshold:0.15
+
 });
 
-document.querySelectorAll(
-".card,.mission-box,.service-card,.project-card,.testimonial-card"
-).forEach(el=>{
+elements.forEach((el)=>{
+
     el.classList.add("hidden");
+
     observer.observe(el);
+
 });
 
 // Counter Animation
-const counters = document.querySelectorAll(".impact-grid h2");
 
-counters.forEach(counter => {
+const counters=document.querySelectorAll(".counter h2");
 
-    const target = counter.innerText;
+counters.forEach(counter=>{
 
-    if (!/^\d+/.test(target)) return;
+const target=parseInt(counter.innerText);
 
-    const number = parseInt(target.replace(/\D/g, ""));
-    let count = 0;
+if(isNaN(target)) return;
 
-    const speed = number / 100;
+let count=0;
 
-    const update = () => {
+const speed=target/120;
 
-        count += speed;
+function update(){
 
-        if (count < number) {
+count+=speed;
 
-            counter.innerText = Math.floor(count) + "+";
+if(count<target){
 
-            requestAnimationFrame(update);
+counter.innerText=Math.floor(count)+"+";
 
-        } else {
+requestAnimationFrame(update);
 
-            counter.innerText = number + "+";
+}else{
 
-        }
-
-    };
-
-    update();
-
-});
-
-// Current Year
-const copy = document.querySelector(".copyright");
-
-if(copy){
-
-copy.innerHTML =
-`© ${new Date().getFullYear()} Sky Foundation. All Rights Reserved.`;
+counter.innerText=target+"+";
 
 }
 
-console.log("Sky Foundation Website Loaded Successfully.");
+}
+
+update();
+
+});
+
+// Smooth Scroll
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+});
+
+});
+
+console.log("✅ Sky Foundation Premium Website Loaded");
