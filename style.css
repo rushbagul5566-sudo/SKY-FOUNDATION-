@@ -73,7 +73,8 @@ nav a{
     transition:.3s;
 }
 
-nav a:hover   color:#FFD700;
+nav a:hover  
+   color:#FFD700;
 }
 }
 .hero{
@@ -204,11 +205,19 @@ button {
 }
 
 /* Mobile */
-@media(max-width:600px){
-
-    .hero h2 {
-        font-size: 28px;
+@media (max-width:768px){
+    .hero{
+        min-height:80vh;
     }
+
+    .hero h2{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
 
     nav a {
         display: block;
