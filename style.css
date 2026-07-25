@@ -281,3 +281,34 @@ button {
 }
 
 .
+/* Hero Background Animation */
+.hero{
+    animation: heroZoom 15s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom{
+    0%{
+        background-size:100%;
+    }
+    100%{
+        background-size:110%;
+    }
+}
+
+/* Hero Content Animation */
+.hero h2,
+.hero p,
+.hero .btn{
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+    }
