@@ -1,23 +1,7 @@
 // ======================================
 // SKY FOUNDATION - PREMIUM SCRIPT
 // ======================================
-window.onload = function () {
-    const loader = document.getElementById("loader");
-    if (loader) {
-        loader.style.display = "none";
-    }
-};
-// Loader
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
 
-    if (loader) {
-        loader.style.opacity = "0";
-
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 500);
-    }
 });
 
 // Mobile Menu
