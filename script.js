@@ -2,8 +2,6 @@
 // SKY FOUNDATION - PREMIUM SCRIPT
 // ======================================
 
-});
-
 // Mobile Menu
 const menuBtn = document.getElementById("menu-btn");
 const navbar = document.getElementById("navbar");
