@@ -1,173 +1,181 @@
-// script.js
+// ======================================
+// SKY FOUNDATION - PREMIUM SCRIPT
+// ======================================
 
-document.addEventListener('DOMContentLoaded', () => {
+// Loader
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
 
-    //
-const preloader = document.getElementById('preloader');
+    if (loader) {
+        loader.style.opacity = "0";
 
-const hidePreloader = () => {
-    if (preloader && preloader.style.display !== 'none') {
-        preloader.style.opacity = '0';
         setTimeout(() => {
-            preloader.style.display = 'none';
+            loader.style.display = "none";
         }, 500);
     }
-};
+});
 
+// Mobile Menu
+const menuBtn = document.getElementById("menu-btn");
+const navbar = document.getElementById("navbar");
 
-window.addEventListener('load', hidePreloader);
+if (menuBtn && navbar) {
 
-setTimeout(hidePreloader, 2000);
+    menuBtn.addEventListener("click", () => {
+
+        navbar.classList.toggle("active");
+
     });
 
-    /* ==========================================================================
-       2. Sticky Header & Back to Top Button
-       ========================================================================== */
-    const header = document.getElementById('header');
-    const backToTopBtn = document.getElementById('backToTop');
+}
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+// Close menu after clicking link
+document.querySelectorAll("#navbar a").forEach(link => {
 
-        if (window.scrollY > 400) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
+    link.addEventListener("click", () => {
+
+        navbar.classList.remove("active");
+
     });
 
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+});
 
-    /* ==========================================================================
-       3. Mobile Navigation Menu
-       ========================================================================== */
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
+// Sticky Header
+window.addEventListener("scroll", () => {
 
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+    const header = document.querySelector(".header");
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
+    if (window.scrollY > 80) {
 
-    /* ==========================================================================
-       4. Animated Statistics Counter
-       ========================================================================== */
-    const statNumbers = document.querySelectorAll('.stat-number');
-    let animated = false;
+        header.style.background = "rgba(255,255,255,.95)";
+        header.style.boxShadow = "0 8px 25px rgba(0,0,0,.12)";
 
-    const animateCounters = () => {
-        statNumbers.forEach(stat => {
-            const target = +stat.getAttribute('data-target');
-            const speed = 200; // lower is faster
-            const increment = target / speed;
+    } else {
 
-            const updateCount = () => {
-                const count = +stat.innerText;
-                if (count < target) {
-                    stat.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 15);
-                } else {
-                    stat.innerText = target;
-                }
-            };
-            updateCount();
-        });
-    };
+        header.style.background = "rgba(255,255,255,.75)";
+        header.style.boxShadow = "none";
 
-    // Trigger counter when in viewport
-    const statsSection = document.querySelector('.stats-section');
-    window.addEventListener('scroll', () => {
-        if (!statsSection) return;
-        const sectionTop = statsSection.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (sectionTop < windowHeight && !animated) {
-            animateCounters();
-            animated = true;
-        }
-    });
-
-    /* ==========================================================================
-       5. Lightbox Image Gallery Preview
-       ========================================================================== */
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.querySelector('.lightbox-close');
-
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const imgSrc = item.getAttribute('data-src');
-            lightboxImg.setAttribute('src', imgSrc);
-            lightbox.style.display = 'flex';
-        });
-    });
-
-    lightboxClose.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', (e) => {
-        if (e.target !== lightboxImg) {
-            lightbox.style.display = 'none';
-        }
-    });
-
-    /* ==========================================================================
-       6. Volunteer Form Handling
-       ========================================================================== */
-    const volunteerForm = document.getElementById('volunteerForm');
-
-    if (volunteerForm) {
-        volunteerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('v-name').value;
-            const mobile = document.getElementById('v-mobile').value;
-            
-            alert(`Thank you, ${name}! Your registration as a Sky Foundation volunteer has been received. Our team will contact you on ${mobile} shortly.`);
-            
-            volunteerForm.reset();
-        });
     }
 
-    /* ==========================================================================
-       7. Scroll Active Link Highlight
-       ========================================================================== */
-    const sections = document.querySelectorAll('section[id]');
+});
 
-    const scrollActive = () => {
-        const scrollY = window.pageYOffset;
+// Back To Top
+const topBtn = document.getElementById("topBtn");
 
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 120;
-            const sectionId = current.getAttribute('id');
+window.addEventListener("scroll", () => {
 
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelector(`.nav-menu a[href*=${sectionId}]`)?.classList.add('active');
-            } else {
-                document.querySelector(`.nav-menu a[href*=${sectionId}]`)?.classList.remove('active');
-            }
-        });
+    if (window.scrollY > 400) {
+
+        topBtn.style.display = "flex";
+
+    } else {
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+        behavior: "smooth"
+
+    });
+
+});
+// ======================================
+// Scroll Animation
+// ======================================
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll(
+".about-card,.service-card,.gallery-item,.event-card,.counter,.donate-box"
+).forEach((el) => {
+    observer.observe(el);
+});
+
+// ======================================
+// Counter Animation
+// ======================================
+
+const counters = document.querySelectorAll(".counter h2");
+
+counters.forEach(counter => {
+
+    const target = parseInt(counter.innerText);
+
+    let count = 0;
+
+    const update = () => {
+
+        const increment = Math.ceil(target / 100);
+
+        if (count < target) {
+
+            count += increment;
+
+            counter.innerText = count + "+";
+
+            requestAnimationFrame(update);
+
+        } else {
+
+            counter.innerText = target + "+";
+
+        }
+
     };
 
-    window.addEventListener('scroll', scrollActive);
+    update();
+
 });
+
+// ======================================
+// Smooth Anchor Scroll
+// ======================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+// ======================================
+// Footer Year
+// ======================================
+
+const year = new Date().getFullYear();
+
+const copy = document.querySelector(".copyright");
+
+if (copy
