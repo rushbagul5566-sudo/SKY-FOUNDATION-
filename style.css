@@ -129,4 +129,101 @@ section h2{
 
 .cards{
     display:grid;
-    grid-template
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+#gallery img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+#team img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+#donate{
+    background:#0B5ED7;
+    color:#fff;
+}
+
+#donate h2{
+    color:#fff;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#FFD700;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.donation-box{
+    background:#fff;
+    color:#333;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+.whatsapp-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:30px;
+}
+
+.map iframe{
+    width:100%;
+    border-radius:12px;
+}
+
+@media(max-width:768px){
+
+header .container{
+    flex-direction:column;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.logo img{
+    width:80px;
+    height:80px;
+}
+
+.hero h2{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+    }
