@@ -18,12 +18,12 @@ body {
 }
 
 /* Header */
-/header{
+header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    padding:15px 40px;
+    paddirng:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
