@@ -530,3 +530,44 @@ section{
 }
 
        }
+/* JavaScript Animation */
+
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:.8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Sticky Header */
+
+header.sticky{
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+/* Mobile Menu */
+
+@media(max-width:768px){
+
+nav.active{
+display:block;
+position:absolute;
+top:85px;
+left:0;
+width:100%;
+background:#fff;
+padding:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+nav.active ul{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+}
