@@ -312,3 +312,30 @@ section h2{
 form{
     display:flex;
     flex-direction:column;
+   .hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.nav-links.active{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:85px;
+    right:20px;
+    background:#fff;
+    width:240px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.top-btn{
+    display:none;
+}
