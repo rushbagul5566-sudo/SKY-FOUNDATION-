@@ -17,17 +17,23 @@ body {
 }
 
 /* Header */
-/* Premium Header */
-header{
-    background:#0B5ED7;
+/header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
     padding:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position:sticky;
-    top:0;
+
+    background:rgba(11,94,215,0.75);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
     z-index:1000;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    transition:0.3s ease;
 }
 
 .logo{
