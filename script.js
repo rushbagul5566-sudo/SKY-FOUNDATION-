@@ -67,26 +67,20 @@ window.addEventListener("scroll", () => {
 // Back To Top
 const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
+if (topBtn) {
 
-    if (window.scrollY > 400) {
+    window.addEventListener("scroll", () => {
+        topBtn.style.display = window.scrollY > 400 ? "flex" : "none";
+    });
 
-        topBtn.style.display = "flex";
-
-    } else {
-
-        topBtn.style.display = "none";
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 
     }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-        behavior: "smooth"
 
     });
 
