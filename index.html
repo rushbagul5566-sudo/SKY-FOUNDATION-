@@ -1,593 +1,364 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Foundation | Together We Can Change Lives</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sky Foundation — Reaching for the Sky, Together</title>
+<meta name="description" content="Sky Foundation empowers communities through education, health, skill-building and environmental action." />
 
-    <link rel="stylesheet" href="style.css">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          midnight: '#0B1F3A',
+          horizon: '#155EAB',
+          sky: '#3C97E8',
+          cyan: '#7FD1F2',
+          cloud: '#F5FAFF',
+          ink: '#0F2540',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['"Inter"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+        boxShadow: {
+          soft: '0 20px 60px -20px rgba(11,31,58,0.35)',
+        }
+      }
+    }
+  }
+</script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #F5FAFF; color: #0F2540; }
+  h1, h2, h3, .font-display { font-family: 'Space Grotesk', sans-serif; }
+
+  /* Ambient drifting clouds */
+  .cloud-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+  .cloud {
+    position: absolute;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    border-radius: 999px;
+    filter: blur(2px);
+    opacity: 0.55;
+  }
+  @keyframes drift {
+    0%   { transform: translateX(-10%); }
+    100% { transform: translateX(110%); }
+  }
+  .cloud-1 { width: 220px; height: 70px; top: 12%; animation: drift 46s linear infinite; }
+  .cloud-2 { width: 160px; height: 55px; top: 30%; animation: drift 60s linear infinite; animation-delay: -12s; opacity:.4;}
+  .cloud-3 { width: 300px; height: 90px; top: 55%; animation: drift 70s linear infinite; animation-delay: -30s; opacity:.3;}
+  .cloud-4 { width: 130px; height: 45px; top: 70%; animation: drift 50s linear infinite; animation-delay: -5s; opacity:.5;}
+
+  @media (prefers-reduced-motion: reduce) {
+    .cloud { animation: none !important; }
+  }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  /* Horizon divider */
+  .horizon-wave { display:block; width:100%; height:auto; }
+
+  /* Glass navbar */
+  .glass { background: rgba(245,250,255,0.75); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+
+  /* Gallery hover */
+  .gallery-tile { position: relative; overflow: hidden; }
+  .gallery-tile img { transition: transform .6s ease; }
+  .gallery-tile:hover img { transform: scale(1.08); }
+  .gallery-caption { transition: opacity .4s ease, transform .4s ease; }
+
+  /* Card lift */
+  .lift { transition: transform .35s ease, box-shadow .35s ease; }
+  .lift:hover { transform: translateY(-6px); }
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #3C97E8; outline-offset: 3px; border-radius: 4px;
+  }
+
+  /* Kite illustration float */
+  @keyframes kite-float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-18px) rotate(2deg); }
+  }
+  .kite { animation: kite-float 6s ease-in-out infinite; }
+
+  /* Number ticker mono */
+  .stat-num { font-family: 'IBM Plex Mono', monospace; }
+
+  /* Mobile menu */
+  #mobileMenu { transition: max-height .35s ease, opacity .3s ease; overflow: hidden; }
+</style>
 </head>
 
-<body>
+<body class="font-body text-ink antialiased">
 
-<!-- ================= HEADER ================= -->
+<!-- ============ NAVBAR ============ -->
+<header class="fixed top-0 inset-x-0 z-50 glass border-b border-sky/10">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 group">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+        <circle cx="17" cy="17" r="16" stroke="#155EAB" stroke-width="1.5"/>
+        <path d="M4 20c3-2 6-2 9 0s6 2 9 0 6-2 8 0" stroke="#3C97E8" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M8 14c2.5-1.5 5-1.5 7.5 0s5 1.5 7.5 0" stroke="#7FD1F2" stroke-width="1.3" stroke-linecap="round"/>
+        <circle cx="23" cy="9" r="3.2" fill="#3C97E8"/>
+      </svg>
+      <span class="font-display font-semibold text-lg tracking-tight text-midnight">Sky Foundation</span>
+    </a>
 
-<header class="header">
+    <div class="hidden md:flex items-center gap-9 font-medium text-sm text-ink/80">
+      <a href="#about" class="hover:text-horizon transition-colors">About</a>
+      <a href="#projects" class="hover:text-horizon transition-colors">Our Projects</a>
+      <a href="#gallery" class="hover:text-horizon transition-colors">Gallery</a>
+      <a href="#contact" class="hover:text-horizon transition-colors">Contact</a>
+    </div>
 
-<div class="container">
+    <div class="flex items-center gap-3">
+      <a href="#donate" class="hidden sm:inline-flex items-center rounded-full bg-midnight text-cloud text-sm font-semibold px-5 py-2.5 hover:bg-horizon transition-colors shadow-soft">
+        Donate
+      </a>
+      <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden flex flex-col gap-1.5 p-2">
+        <span class="w-6 h-0.5 bg-midnight"></span>
+        <span class="w-6 h-0.5 bg-midnight"></span>
+        <span class="w-6 h-0.5 bg-midnight"></span>
+      </button>
+    </div>
+  </nav>
 
-<div class="logo">
-
-<img src="20240501_182828.pnglogo.png" alt="Sky Foundation">
-
-<h2>Sky Foundation</h2>
-
-</div>
-
-<nav>
-
-<ul class="nav-links">
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#mission">Mission</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#gallery">Gallery</a></li>
-
-<li><a href="#volunteer">Volunteer</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<a href="#donate" class="btn">Donate Now</a>
-
-<div class="menu-btn">
-
-<i class="fas fa-bars"></i>
-
-</div>
-
-</div>
-
+  <div id="mobileMenu" class="md:hidden max-h-0 opacity-0 px-6 pb-0">
+    <div class="flex flex-col gap-4 py-4 border-t border-sky/10 font-medium text-ink/80">
+      <a href="#about" class="menu-link">About</a>
+      <a href="#projects" class="menu-link">Our Projects</a>
+      <a href="#gallery" class="menu-link">Gallery</a>
+      <a href="#contact" class="menu-link">Contact</a>
+      <a href="#donate" class="menu-link font-semibold text-horizon">Donate</a>
+    </div>
+  </div>
 </header>
 
-<!-- ================= HERO SECTION ================= -->
+<!-- ============ HERO ============ -->
+<section id="top" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-to-b from-midnight via-horizon to-sky">
+  <div class="cloud-layer">
+    <span class="cloud cloud-1"></span>
+    <span class="cloud cloud-2"></span>
+    <span class="cloud cloud-3"></span>
+    <span class="cloud cloud-4"></span>
+  </div>
 
-<section class="hero" id="home">
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10 w-full grid lg:grid-cols-12 gap-10 items-center py-20">
+    <div class="lg:col-span-7 text-cloud">
+      <p class="uppercase tracking-[0.3em] text-cyan/90 text-xs font-semibold mb-6">Sky Foundation · Est. Community Trust</p>
+      <h1 class="font-display font-semibold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
+        Reaching for<br class="hidden sm:block"> the sky,<br class="hidden sm:block">
+        <span class="text-cyan">together.</span>
+      </h1>
+      <p class="text-cloud/85 text-lg max-w-xl mb-10 leading-relaxed">
+        We work alongside communities on education, health and livelihood — turning a
+        clear horizon into a real one, one classroom, clinic and courtyard at a time.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#about" class="inline-flex items-center gap-2 rounded-full bg-cloud text-midnight font-semibold px-7 py-3.5 hover:bg-cyan transition-colors shadow-soft">
+          Learn More
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#donate" class="inline-flex items-center gap-2 rounded-full border border-cloud/40 text-cloud font-semibold px-7 py-3.5 hover:bg-white/10 transition-colors">
+          Donate Now
+        </a>
+      </div>
+    </div>
 
-<div class="hero-overlay"></div>
+    <div class="lg:col-span-5 hidden lg:flex justify-center">
+      <svg class="kite w-72 h-72" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 10 L170 90 L100 190 L30 90 Z" stroke="#F5FAFF" stroke-width="2" fill="rgba(245,250,255,0.06)"/>
+        <path d="M100 10 L100 190 M30 90 L170 90" stroke="#7FD1F2" stroke-width="1.2"/>
+        <path d="M100 190 C 95 205, 105 215, 98 228 C 92 240, 104 248, 96 260" stroke="#F5FAFF" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
 
-<div class="container hero-content">
-
-<h4>Welcome To</h4>
-
-<h1>Sky Foundation</h1>
-
-<h3>Helping Humanity With Care, Compassion & Commitment</h3>
-
-<p>
-We believe every person deserves dignity, healthcare,
-education and hope. Together we can build a brighter future.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#about" class="btn">Explore More</a>
-
-<a href="#volunteer" class="btn btn-outline">
-Become Volunteer
-</a>
-
-</div>
-
-</div>
-
+  <!-- horizon divider -->
+  <svg class="horizon-wave absolute bottom-0 left-0" viewBox="0 0 1440 110" preserveAspectRatio="none">
+    <path d="M0,64 C240,110 480,20 720,54 C960,88 1200,20 1440,60 L1440,110 L0,110 Z" fill="#F5FAFF"/>
+  </svg>
 </section>
 
-<!-- ================= HERO CARDS ================= -->
+<!-- ============ ABOUT ============ -->
+<section id="about" class="relative py-28 bg-cloud">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16 items-center">
+    <div class="lg:col-span-6 reveal">
+      <p class="uppercase tracking-[0.3em] text-horizon text-xs font-semibold mb-4">About Sky Foundation</p>
+      <h2 class="font-display font-semibold text-4xl sm:text-5xl leading-tight mb-6 text-midnight">
+        A clear horizon starts with steady ground.
+      </h2>
+      <p class="text-ink/75 leading-relaxed mb-5">
+        Sky Foundation began with a simple belief — that every child, family and neighbourhood
+        deserves the conditions to look up and aim higher. We partner with local schools,
+        clinics and self-help groups rather than working around them, so progress stays in
+        the hands of the people who live it every day.
+      </p>
+      <p class="text-ink/75 leading-relaxed mb-10">
+        Today our work spans education support, mobile health camps, vocational training and
+        neighbourhood greening — four threads of one goal: room to grow.
+      </p>
 
-<section class="hero-cards">
+      <div class="grid grid-cols-3 gap-6">
+        <div>
+          <p class="stat-num text-3xl font-semibold text-midnight">12+</p>
+          <p class="text-xs uppercase tracking-wide text-ink/60 mt-1">Years active</p>
+        </div>
+        <div>
+          <p class="stat-num text-3xl font-semibold text-midnight">40k</p>
+          <p class="text-xs uppercase tracking-wide text-ink/60 mt-1">Lives touched</p>
+        </div>
+        <div>
+          <p class="stat-num text-3xl font-semibold text-midnight">120</p>
+          <p class="text-xs uppercase tracking-wide text-ink/60 mt-1">Volunteers</p>
+        </div>
+      </div>
+    </div>
 
-<div class="container cards">
-
-<div class="card">
-
-<i class="fas fa-hand-holding-heart"></i>
-
-<h3>Social Welfare</h3>
-
-<p>Supporting families and communities with essential services.</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-heartbeat"></i>
-
-<h3>Healthcare</h3>
-
-<p>Providing quality healthcare and home medical support.</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-user-graduate"></i>
-
-<h3>Education</h3>
-
-<p>Empowering children through education and awareness.</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-hands-helping"></i>
-
-<h3>Volunteer</h3>
-
-<p>Join our mission and make a difference in people's lives.</p>
-
-</div>
-
-</div>
-
+    <div class="lg:col-span-6 reveal">
+      <div class="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft">
+        <img src="https://picsum.photos/seed/skyfoundation-about/900/1100" alt="Community members working together at a Sky Foundation programme" class="w-full h-full object-cover" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-midnight/50 via-transparent to-transparent"></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- About Section पुढील Part मध्ये -->
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="relative py-28 bg-gradient-to-b from-cloud to-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="uppercase tracking-[0.3em] text-horizon text-xs font-semibold mb-4">Our Projects</p>
+      <h2 class="font-display font-semibold text-4xl sm:text-5xl leading-tight text-midnight">
+        Four threads, one direction — up.
+      </h2>
+    </div>
 
-<script src="script.js"></script>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-</body>
-  </html>
-<!-- ================= ABOUT ================= -->
+      <div class="reveal lift bg-white rounded-2xl p-7 border border-sky/10 shadow-soft">
+        <div class="w-12 h-12 rounded-xl bg-horizon/10 flex items-center justify-center mb-6">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 8l9-4 9 4-9 4-9-4Z" stroke="#155EAB" stroke-width="1.6" stroke-linejoin="round"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" stroke="#155EAB" stroke-width="1.6"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-lg mb-2 text-midnight">Umeed — Education</h3>
+        <p class="text-sm text-ink/70 leading-relaxed mb-5">After-school learning centres and school-supply support for children in under-resourced neighbourhoods.</p>
+        <a href="#contact" class="text-sm font-semibold text-horizon inline-flex items-center gap-1 hover:gap-2 transition-all">Explore <span>→</span></a>
+      </div>
 
-<section class="about" id="about">
+      <div class="reveal lift bg-white rounded-2xl p-7 border border-sky/10 shadow-soft">
+        <div class="w-12 h-12 rounded-xl bg-horizon/10 flex items-center justify-center mb-6">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9Z" stroke="#155EAB" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-lg mb-2 text-midnight">Swasth — Health</h3>
+        <p class="text-sm text-ink/70 leading-relaxed mb-5">Monthly mobile health camps offering check-ups, maternal care guidance and medicine access.</p>
+        <a href="#contact" class="text-sm font-semibold text-horizon inline-flex items-center gap-1 hover:gap-2 transition-all">Explore <span>→</span></a>
+      </div>
 
-<div class="container about-grid">
+      <div class="reveal lift bg-white rounded-2xl p-7 border border-sky/10 shadow-soft">
+        <div class="w-12 h-12 rounded-xl bg-horizon/10 flex items-center justify-center mb-6">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="#155EAB" stroke-width="1.6"/><path d="M7 9h6M7 13h10" stroke="#155EAB" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-lg mb-2 text-midnight">Unnati — Livelihood</h3>
+        <p class="text-sm text-ink/70 leading-relaxed mb-5">Vocational training and small-business mentorship so families build steady, independent income.</p>
+        <a href="#contact" class="text-sm font-semibold text-horizon inline-flex items-center gap-1 hover:gap-2 transition-all">Explore <span>→</span></a>
+      </div>
 
-<div class="about-image">
-<img src="images/about.jpg" alt="About Sky Foundation">
-</div>
+      <div class="reveal lift bg-white rounded-2xl p-7 border border-sky/10 shadow-soft">
+        <div class="w-12 h-12 rounded-xl bg-horizon/10 flex items-center justify-center mb-6">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c3 3 5 6 5 9a5 5 0 0 1-10 0c0-3 2-6 5-9Z" stroke="#155EAB" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 21v-6" stroke="#155EAB" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-lg mb-2 text-midnight">Hariyali — Environment</h3>
+        <p class="text-sm text-ink/70 leading-relaxed mb-5">Neighbourhood tree-planting and rainwater harvesting drives run entirely by local volunteers.</p>
+        <a href="#contact" class="text-sm font-semibold text-horizon inline-flex items-center gap-1 hover:gap-2 transition-all">Explore <span>→</span></a>
+      </div>
 
-<div class="about-content">
-
-<span>ABOUT US</span>
-
-<h2>Serving Humanity With Love & Care</h2>
-
-<p>
-Sky Foundation is dedicated to improving lives through
-healthcare, education, emergency support, elderly care,
-community welfare and social development.
-</p>
-
-<p>
-Our mission is to create a healthier and stronger society by
-connecting people with quality care and meaningful support.
-</p>
-
-<a href="#services" class="btn">Learn More</a>
-
-</div>
-
-</div>
-
+    </div>
+  </div>
 </section>
 
-<!-- ================= MISSION ================= -->
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="relative py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl mb-16 reveal">
+      <p class="uppercase tracking-[0.3em] text-horizon text-xs font-semibold mb-4">Gallery</p>
+      <h2 class="font-display font-semibold text-4xl sm:text-5xl leading-tight text-midnight">
+        Moments from the ground.
+      </h2>
+    </div>
 
-<section class="mission" id="mission">
-
-<div class="container">
-
-<h2>Our Mission & Vision</h2>
-
-<div class="mission-grid">
-
-<div class="mission-box">
-<i class="fas fa-bullseye"></i>
-<h3>Mission</h3>
-<p>
-To provide quality healthcare, social support and hope to every individual in need.
-</p>
-</div>
-
-<div class="mission-box">
-<i class="fas fa-eye"></i>
-<h3>Vision</h3>
-<p>
-To become one of India's most trusted organizations in healthcare and social welfare.
-</p>
-</div>
-
-<div class="mission-box">
-<i class="fas fa-handshake"></i>
-<h3>Our Values</h3>
-<p>
-Compassion, Transparency, Integrity, Respect and Excellence.
-</p>
-</div>
-
-</div>
-
-</div>
-
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px] sm:auto-rows-[220px]">
+      <div class="gallery-tile reveal rounded-2xl row-span-2 col-span-2 sm:col-span-1">
+        <img src="https://picsum.photos/seed/sky-g1/700/900" class="w-full h-full object-cover" alt="Children learning at an Umeed education centre" loading="lazy"/>
+      </div>
+      <div class="gallery-tile reveal rounded-2xl">
+        <img src="https://picsum.photos/seed/sky-g2/500/400" class="w-full h-full object-cover" alt="Volunteers at a Swasth health camp" loading="lazy"/>
+      </div>
+      <div class="gallery-tile reveal rounded-2xl">
+        <img src="https://picsum.photos/seed/sky-g3/500/400" class="w-full h-full object-cover" alt="Vocational training session under Unnati" loading="lazy"/>
+      </div>
+      <div class="gallery-tile reveal rounded-2xl row-span-2">
+        <img src="https://picsum.photos/seed/sky-g4/500/900" class="w-full h-full object-cover" alt="Tree planting drive under Hariyali" loading="lazy"/>
+      </div>
+      <div class="gallery-tile reveal rounded-2xl">
+        <img src="https://picsum.photos/seed/sky-g5/500/400" class="w-full h-full object-cover" alt="Community gathering hosted by Sky Foundation" loading="lazy"/>
+      </div>
+      <div class="gallery-tile reveal rounded-2xl">
+        <img src="https://picsum.photos/seed/sky-g6/500/400" class="w-full h-full object-cover" alt="Volunteers distributing school supplies" loading="lazy"/>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-
-<section class="services" id="services">
-
-<div class="container">
-
-<h2>Our Services</h2>
-
-<div class="service-grid">
-
-<div class="service-card">
-<i class="fas fa-user-nurse"></i>
-<h3>Home Nursing</h3>
-<p>Professional nursing care at home.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-wheelchair"></i>
-<h3>Elder Care</h3>
-<p>Complete support for senior citizens.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-ambulance"></i>
-<h3>Emergency Support</h3>
-<p>Fast emergency healthcare assistance.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-stethoscope"></i>
-<h3>Medical Camps</h3>
-<p>Free health check-up and awareness programs.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-book-open"></i>
-<h3>Education Support</h3>
-<p>Helping children continue their education.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-hands-helping"></i>
-<h3>Community Welfare</h3>
-<p>Serving society through impactful initiatives.</p>
-</div>
-
-</div>
-
-</div>
-
-  </section>
-<!-- ================= PROJECTS ================= -->
-
-<section class="projects" id="projects">
-
-<div class="container">
-
-<h2>Our Projects</h2>
-
-<div class="project-grid">
-
-<div class="project-card">
-<img src="images/project1.jpg" alt="">
-<h3>Healthcare Support</h3>
-<p>Providing quality home healthcare services to patients.</p>
-</div>
-
-<div class="project-card">
-<img src="images/project2.jpg" alt="">
-<h3>Food Distribution</h3>
-<p>Helping needy families with food and essential supplies.</p>
-</div>
-
-<div class="project-card">
-<img src="images/project3.jpg" alt="">
-<h3>Education Program</h3>
-<p>Supporting underprivileged children's education.</p>
-</div>
-
-</div>
-
-</div>
-
+<!-- ============ DONATE / CTA ============ -->
+<section id="donate" class="relative py-24 bg-gradient-to-r from-midnight to-horizon overflow-hidden">
+  <div class="cloud-layer opacity-60">
+    <span class="cloud cloud-2" style="top:20%"></span>
+    <span class="cloud cloud-4" style="top:65%"></span>
+  </div>
+  <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+    <h2 class="font-display font-semibold text-3xl sm:text-4xl text-cloud mb-5">Your support keeps the sky within reach.</h2>
+    <p class="text-cloud/80 max-w-xl mx-auto mb-9">Every contribution funds school supplies, health-camp medicine, training kits and saplings — no gesture is too small.</p>
+    <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-cloud text-midnight font-semibold px-8 py-4 hover:bg-cyan transition-colors shadow-soft">
+      Make a Donation
+    </a>
+  </div>
 </section>
 
-<!-- ================= IMPACT ================= -->
-
-<section class="impact">
-
-<div class="container">
-
-<div class="impact-grid">
-
-<div>
-<h2>5000+</h2>
-<p>Families Helped</p>
-</div>
-
-<div>
-<h2>100+</h2>
-<p>Volunteers</p>
-</div>
-
-<div>
-<h2>50+</h2>
-<p>Healthcare Camps</p>
-</div>
-
-<div>
-<h2>24×7</h2>
-<p>Support Available</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= GALLERY ================= -->
-
-<section class="gallery" id="gallery">
-
-<div class="container">
-
-<h2>Gallery</h2>
-
-<div class="gallery-grid">
-
-<img src="images/gallery1.jpg" alt="">
-<img src="images/gallery2.jpg" alt="">
-<img src="images/gallery3.jpg" alt="">
-<img src="images/gallery4.jpg" alt="">
-<img src="images/gallery5.jpg" alt="">
-<img src="images/gallery6.jpg" alt="">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= TESTIMONIALS ================= -->
-
-<section class="testimonials">
-
-<div class="container">
-
-<h2>What People Say</h2>
-
-<div class="testimonial-grid">
-
-<div class="testimonial-card">
-<p>"Excellent healthcare support and dedicated team."</p>
-<h4>- Happy Family</h4>
-</div>
-
-<div class="testimonial-card">
-<p>"Professional services with genuine care."</p>
-<h4>- Patient</h4>
-</div>
-
-<div class="testimonial-card">
-<p>"One of the best social organizations."</p>
-<h4>- Volunteer</h4>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= VOLUNTEER ================= -->
-
-<section class="volunteer" id="volunteer">
-
-<div class="container">
-
-<h2>Become A Volunteer</h2>
-
-<form>
-
-<input type="text" placeholder="Full Name" required>
-
-<input type="email" placeholder="Email" required>
-
-<input type="tel" placeholder="Mobile Number" required>
-
-<textarea placeholder="Why do you want to join?"></textarea>
-
-<button class="btn" type="submit">
-Join Now
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- ================= DONATE ================= -->
-
-<section class="donate" id="donate">
-
-<div class="container">
-
-<h2>Support Our Mission</h2>
-
-<p>
-Every contribution helps us provide healthcare,
-education and hope to those who need it most.
-</p>
-
-<a href="#" class="btn">
-Donate Now
-</a>
-
-</div>
-
-  </section>
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<h2>Contact Us</h2>
-
-<div class="contact-grid">
-
-<div class="contact-info">
-
-<h3>Sky Foundation</h3>
-
-<p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</p>
-
-<p><i class="fas fa-phone"></i> +91 9049343193</p>
-
-<p><i class="fas fa-envelope"></i> info@skyfoundation.org</p>
-
-<p>
-We are committed to serving society with healthcare,
-education and community support.
-</p>
-
-</div>
-
-<div class="contact-form">
-
-<form>
-
-<input type="text" placeholder="Your Name" required>
-
-<input type="email" placeholder="Your Email" required>
-
-<input type="text" placeholder="Subject">
-
-<textarea placeholder="Your Message" rows="6"></textarea>
-
-<button type="submit" class="btn">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= GOOGLE MAP ================= -->
-
-<section class="map">
-
-<iframe
-src="https://www.google.com/maps?q=Pune,Maharashtra&output=embed"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<h3>Sky Foundation</h3>
-
-<p>
-Together we can build a healthier,
-stronger and happier society.
-</p>
-
-</div>
-
-<div>
-
-<h3>Quick Links</h3>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Follow Us</h3>
-
-<div class="social-icons">
-
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-
-<a href="#"><i class="fab fa-instagram"></i></a>
-
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-<a href="#"><i class="fab fa-youtube"></i></a>
-
-</div>
-
-</div>
-
-</div>
-
-<hr>
-
-<p class="copyright">
-© 2026 Sky Foundation. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
-
-<!-- Back To Top -->
-
-<a href="#home" class="top-btn">
-<i class="fas fa-arrow-up"></i>
-  </a>
+<!-- ============ FOOTER / CONTACT ============ -->
+<footer id="contact" class="bg-midnight text-cloud/80">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-4 gap-12">
+
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2 mb-5">
+        <svg width="30" height="30" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="16" stroke="#7FD1F2" stroke-width="1.5"/><path d="M4 20c3-2 6-2 9 0s6 2 9 0 6-2 8 0" stroke="#3C97E8" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span class="font-display font-semibold text-lg text-cloud">Sky Foundation</span>
+      </div>
+      <p class="text-sm leading-relaxed max-w-sm mb-6">
+        A community-first NGO working on education, health, livelihood and environment —
+        so every neighbourhood has room to grow.
+      </p>
+      <div class="flex gap-4">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-cloud/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1Z" fill="#F5FAFF"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-cloud/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#F5FAFF" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#F5FAFF" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="#F5FAFF"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-cloud/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+          <svg width="16" height="16" viewBox="0
