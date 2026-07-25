@@ -1,261 +1,696 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>स्काय फाउंडेशन | Sky Foundation</title>
+    <title>स्काय फाउंडेशन | Sky Foundation - Empowering Communities</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Reset & Basic Styles */
+        :root {
+            --primary-color: #0d47a1;
+            --primary-dark: #002171;
+            --secondary-color: #f57c00;
+            --accent-color: #00c853;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
         }
 
-        /* Header & Navigation */
-        header {
-            background-color: #004085;
-            color: #fff;
-            padding: 1rem 5%;
+        /* Top Bar */
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .top-info i {
+            color: var(--secondary-color);
+            margin-right: 6px;
+        }
+
+        .lang-switch {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .lang-switch:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        /* Navbar */
+        header {
+            background: var(--white);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .logo h1 {
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(13, 71, 161, 0.3);
         }
 
-        nav ul {
+        .logo-text h1 {
+            font-size: 1.35rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .nav-menu {
             display: flex;
             list-style: none;
+            gap: 25px;
+            align-items: center;
         }
 
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
+        .nav-link {
             text-decoration: none;
+            color: var(--text-dark);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
         }
 
-        nav ul li a:hover {
-            color: #ffc107;
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-btn {
+            background: var(--secondary-color);
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(245, 124, 0, 0.3);
+        }
+
+        .nav-btn:hover {
+            background: #e65100;
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 64, 133, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200') no-repeat center center/cover;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(0, 33, 113, 0.8), rgba(13, 71, 161, 0.85)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600') center/cover no-repeat;
+            color: white;
+            padding: 120px 5% 100px;
             text-align: center;
-            color: #fff;
-            padding: 0 20px;
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #ffc107;
-            color: #000;
-            padding: 10px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #e0a800;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 5%;
-            max-width: 1200px;
+        .hero-content {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: #004085;
+        .hero-tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 6px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            margin-bottom: 35px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(245, 124, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: #e65100;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Counter */
+        .stats-container {
+            max-width: 1100px;
+            margin: -50px auto 60px;
             position: relative;
+            z-index: 10;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
         }
 
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: #ffc107;
+        .stat-card i {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .stat-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 70px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
             display: block;
-            margin: 10px auto 0;
+            margin-bottom: 8px;
         }
 
-        /* About & Cards Grid */
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .feature-item i {
+            color: var(--accent-color);
+        }
+
+        /* Pillars / Focus Areas */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid #004085;
+            background: white;
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(13, 71, 161, 0.08);
+            color: var(--primary-color);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            margin-bottom: 15px;
-            color: #004085;
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
-        /* Contact Section */
-        .contact-info {
-            text-align: center;
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Donation Section */
+        .donate-box {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            border-radius: 24px;
+            color: white;
+            padding: 50px 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 33, 113, 0.2);
+        }
+
+        .donate-text h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .donate-text p {
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .bank-details {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 16px;
+        }
+
+        .bank-details h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
             font-size: 1.1rem;
         }
 
-        .contact-info p {
-            margin-bottom: 10px;
+        .bank-details p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: rgba(13, 71, 161, 0.08);
+            color: var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .info-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 3px;
+        }
+
+        .info-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            outline: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
         }
 
         /* Footer */
         footer {
-            background: #212529;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
+            background: var(--primary-dark);
+            color: white;
+            padding: 60px 5% 20px;
         }
 
-        /* Mobile Responsive */
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .donate-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            header {
+            .top-bar {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
+                text-align: center;
             }
 
-            nav ul li {
-                margin: 0 10px;
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-menu.active {
+                display: flex;
             }
 
             .hero h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
-    <header>
-        <div class="logo">
-            <h1>स्काय फाउंडेशन (Sky Foundation)</h1>
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</span>
+            <span><i class="fa-solid fa-envelope"></i> contact@skyfoundation.org</span>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">मुख्य पृष्ठ</a></li>
-                <li><a href="#about">आमच्याबद्दल</a></li>
-                <li><a href="#work">उपक्रम</a></li>
-                <li><a href="#contact">संपर्क</a></li>
+        <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">English</button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo-container">
+                <div class="logo-icon">S</div>
+                <div class="logo-text">
+                    <h1>स्काय फाउंडेशन</h1>
+                    <span>SKY FOUNDATION</span>
+                </div>
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link lang-mr">मुख्य पृष्ठ</a><a href="#home" class="nav-link lang-en" style="display:none;">Home</a></li>
+                <li><a href="#about" class="nav-link lang-mr">आमच्याबद्दल</a><a href="#about" class="nav-link lang-en" style="display:none;">About Us</a></li>
+                <li><a href="#work" class="nav-link lang-mr">उपक्रम</a><a href="#work" class="nav-link lang-en" style="display:none;">Our Initiatives</a></li>
+                <li><a href="#contact" class="nav-link lang-mr">संपर्क</a><a href="#contact" class="nav-link lang-en" style="display:none;">Contact</a></li>
+                <li><a href="#donate" class="nav-link nav-btn lang-mr">मदत करा</a><a href="#donate" class="nav-link nav-btn lang-en" style="display:none;">Donate Now</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h2>समाजाच्या विकासासाठी एकत्र येऊया</h2>
-        <p>स्काय फाउंडेशन - समाजसेवा, आरोग्य, शिक्षण आणि सामाजिक प्रगतीसाठी कटिबद्ध.</p>
-        <a href="#contact" class="btn">आमच्याशी जोडा</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">आमच्याबद्दल</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-            स्काय फाउंडेशन ही संस्था सामाजिक बांधिलकी जपत विविध क्षेत्रात कार्य करते. समाजातील गरजू घटकांना मदत करणे आणि सकारात्मक बदल घडवून आणणे हे आमचे उद्दिष्ट आहे.
-        </p>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>आमचे ध्येय (Mission)</h3>
-                <p>समाजातील प्रत्येक घटकापर्यंत मदत पोहोचवणे आणि शिक्षण व आरोग्याच्या सुविधा उपलब्ध करून देणे.</p>
-            </div>
-            <div class="card">
-                <h3>आमची दृष्टी (Vision)</h3>
-                <p>एक सक्षम, सुशिक्षित आणि निरोगी समाज घडवणे जिथे प्रत्येकाला प्रगतीची समान संधी मिळेल.</p>
-            </div>
-            <div class="card">
-                <h3>आमचे मूल्य (Values)</h3>
-                <p>पारदर्शकता, समर्पण, सामाजिक बांधिलकी आणि अखंड सेवाभाव.</p>
+        <div class="hero-content">
+            <span class="hero-tag lang-mr">सकारात्मक बदलाची सुरुवात</span>
+            <span class="hero-tag lang-en" style="display:none;">Empowering Lives</span>
+            <h2 class="lang-mr">समाजाच्या शाश्वत प्रगतीसाठी आणि समृद्धीसाठी कटिबद्ध</h2>
+            <h2 class="lang-en" style="display:none;">Dedicated to Sustainable Community Development & Empowerment</h2>
+            <p class="lang-mr">स्काय फाउंडेशन आरोग्य, शिक्षण, समाजसेवा आणि युवा सक्षमीकरणाच्या माध्यमातून समाजात सकारात्मक आणि सकारात्मक बदल घडवून आणण्यासाठी कार्यरत आहे.</p>
+            <p class="lang-en" style="display:none;">Sky Foundation works tirelessly to drive meaningful change through quality healthcare, inclusive education, and youth skill development.</p>
+            <div class="hero-btns">
+                <a href="#donate" class="btn-primary lang-mr">योगदान द्या</a>
+                <a href="#donate" class="btn-primary lang-en" style="display:none;">Get Involved</a>
+                <a href="#work" class="btn-secondary lang-mr">उपक्रम पहा</a>
+                <a href="#work" class="btn-secondary lang-en" style="display:none;">Our Work</a>
             </div>
         </div>
     </section>
 
-    <!-- Activities/Work Section -->
-    <section id="work">
-        <h2 class="section-title">आमचे सामाजिक उपक्रम</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>आरोग्य व वैद्यकीय मदत</h3>
-                <p>मोफत आरोग्य तपासणी शिबिरे आणि गरजू रुग्णांना वैद्यकीय मदत पुरवणे.</p>
-            </div>
-            <div class="card">
-                <h3>शिक्षण व क्रीडा</h3>
-                <p>विद्यार्थ्यांसाठी शैक्षणिक साहित्य वाटप आणि विविध उपक्रमांचे आयोजन.</p>
-            </div>
-            <div class="card">
-                <h3>सामाजिक व सांस्कृतिक कार्यक्रम</h3>
-                <p>विविध सण, उत्सव आणि सामाजिक जागृतीचे कार्यक्रम यशस्वीपणे आयोजित करणे.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">संपर्क करा</h2>
-        <div class="contact-info">
-            <p><strong>पत्ता:</strong> पुणे, महाराष्ट्र</p>
-            <p><strong>ईमेल:</strong> contact@skyfoundation.org</p>
-            <p><strong>फोन:</strong> +91 XXXXXXXXXX</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 स्काय फाउंडेशन (Sky Foundation). सर्व हक्क सुरक्षित.</p>
-    </footer>
-
-</body>
-  </html>
+    <!-- Stats Counter -->
+    <div class="stats-container">
+        <div class="stat-card">
+            <i cl
