@@ -1,465 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="mr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्काय फाउंडेशन | Sky Foundation</title>
+    <style>
+        /* Reset & Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
 
-<title>Sky Foundation | Health • Humanity • Hope</title>
+        /* Header & Navigation */
+        header {
+            background-color: #004085;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-<meta name="description"
-content="Sky Foundation - Healthcare, Social Service, Blood Donation, Education & Community Welfare">
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #fff;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        nav ul li {
+            margin-left: 20px;
+        }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-<link rel="stylesheet" href="style.css">
+        nav ul li a:hover {
+            color: #ffc107;
+        }
 
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 64, 133, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffc107;
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #e0a800;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #004085;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: #ffc107;
+            display: block;
+            margin: 10px auto 0;
+        }
+
+        /* About & Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #004085;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #004085;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #212529;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-
-<header>
-
-<div class="container">
-
-<a href="#" class="logo">
-
-<img src="20240501_182828.png" alt="Sky Foundation Logo">
-
-<div>
-
-<h2>Sky Foundation</h2>
-
-<p>आरोग्य • संघटन • सहकार्य</p>
-
-</div>
-
-</a>
-
-<nav>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#services">Services</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#gallery">Gallery</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<a href="#volunteer" class="btn">
-Volunteer
-</a>
-
-<div class="menu-btn">
-<i class="fas fa-bars"></i>
-</div>
-
-</div>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-<div class="hero-overlay"></div>
-
-<div class="container hero-content">
-
-<h4>Welcome To</h4>
-
-<h1>Sky Foundation</h1>
-
-<h2>आरोग्य • संघटन • सहकार्य</h2>
-
-<p>
-
-Dedicated to Healthcare, Humanity,
-Education and Social Welfare.
-
-<br><br>
-
-गरजू व्यक्तींपर्यंत आरोग्य सेवा,
-समाजसेवा आणि मानवतेचा हात
-पोहोचवणे हे आमचे ध्येय आहे.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#about" class="btn">
-Know More
-</a>
-
-<a href="https://wa.me/919049343193"
-class="btn btn-outline">
-
-WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FEATURES ================= -->
-
-<section class="features">
-
-<div class="container">
-
-<div class="feature-card">
-
-<i class="fas fa-heart"></i>
-
-<h3>Healthcare</h3>
-
-<p>Quality healthcare support for everyone.</p>
-
-</div>
-
-<div class="feature-card">
-
-<i class="fas fa-hand-holding-heart"></i>
-
-<h3>Social Service</h3>
-
-<p>Helping families with love and care.</p>
-
-</div>
-
-<div class="feature-card">
-
-<i class="fas fa-users"></i>
-
-<h3>Volunteers</h3>
-
-<p>Together we create a better society.</p>
-
-</div>
-
-<div class="feature-card">
-
-<i class="fas fa-handshake"></i>
-
-<h3>Community</h3>
-
-<p>Working together for positive change.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about" class="about">
-
-<div class="container about-grid">
-
-<div class="about-image">
-
-<img src="20240501_182828.png"
-alt="Sky Foundation">
-
-</div>
-
-<div class="about-content">
-
-<h5>About Us</h5>
-
-<h2>Sky Foundation</h2>
-
-<p>
-
-Sky Foundation is committed to healthcare,
-social welfare, education,
-patient support and humanitarian service.
-
-</p>
-
-<p>
-
-स्काय फाउंडेशन ही समाजसेवा,
-आरोग्य सेवा,
-ज्येष्ठ नागरिक सेवा,
-रक्तदान,
-शैक्षणिक मदत
-आणि सामाजिक विकासासाठी कार्य करणारी संस्था आहे.
-
-</p>
-
-<a href="#services" class="btn">
-
-Explore Services
-
-</a>
-
-</div>
-
-</div>
-
-  </section>
-  <!-- ================= MISSION ================= -->
-
-<section class="mission">
-
-<div class="container">
-
-<h2>Our Mission • Vision • Values</h2>
-
-<div class="mission-grid">
-
-<div class="mission-card">
-<i class="fas fa-bullseye"></i>
-<h3>Mission</h3>
-<p>
-Providing healthcare, education, awareness and social support to every needy person.
-</p>
-</div>
-
-<div class="mission-card">
-<i class="fas fa-eye"></i>
-<h3>Vision</h3>
-<p>
-To build a healthy, educated and empowered society through collective efforts.
-</p>
-</div>
-
-<div class="mission-card">
-<i class="fas fa-handshake"></i>
-<h3>Values</h3>
-<p>
-Humanity, Honesty, Respect, Compassion and Community Service.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= SERVICES ================= -->
-
-<section id="services" class="services">
-
-<div class="container">
-
-<h2>Our Services | आमच्या सेवा</h2>
-
-<div class="services-grid">
-
-<div class="service-card">
-<i class="fas fa-user-nurse"></i>
-<h3>Home Healthcare</h3>
-<p>Professional nursing and patient care at home.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-heart-pulse"></i>
-<h3>Health Camps</h3>
-<p>Free medical checkups and health awareness programs.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-droplet"></i>
-<h3>Blood Donation</h3>
-<p>Organizing blood donation drives for saving lives.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-book-open"></i>
-<h3>Education Support</h3>
-<p>Helping students with educational guidance and support.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-tree"></i>
-<h3>Environment</h3>
-<p>Tree plantation and environmental awareness campaigns.</p>
-</div>
-
-<div class="service-card">
-<i class="fas fa-hands-helping"></i>
-<h3>Community Welfare</h3>
-<p>Supporting families through various social initiatives.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= IMPACT ================= -->
-
-<section class="impact">
-
-<div class="
-  <!-- ================= GALLERY ================= -->
-
-<section id="gallery" class="gallery">
-
-<div class="container">
-
-<h2>Gallery | गॅलरी</h2>
-
-<div class="gallery-grid">
-
-<img src="20240501_182828.png" alt="Sky Foundation">
-<img src="20240501_182828.png" alt="Sky Foundation">
-<img src="20240501_182828.png" alt="Sky Foundation">
-<img src="20240501_182828.png" alt="Sky Foundation">
-<img src="20240501_182828.png" alt="Sky Foundation">
-<img src="20240501_182828.png" alt="Sky Foundation">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= VOLUNTEER ================= -->
-
-<section id="volunteer" class="volunteer">
-
-<div class="container">
-
-<h2>Become a Volunteer | स्वयंसेवक बना</h2>
-
-<form>
-
-<input type="text" placeholder="Full Name / पूर्ण नाव" required>
-
-<input type="tel" placeholder="Mobile Number" required>
-
-<input type="email" placeholder="Email Address">
-
-<textarea placeholder="Message"></textarea>
-
-<button type="submit" class="btn">
-Join Now
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<h2>Contact Us</h2>
-
-<div class="contact-grid">
-
-<div>
-
-<h3>Sky Foundation</h3>
-
-<p><i class="fas fa-phone"></i> 8888560080</p>
-
-<p><i class="fab fa-whatsapp"></i> 9049343193</p>
-
-<p><i class="fas fa-location-dot"></i>
-At Post Karanjkhed,
-Tal. Kannad,
-Dist. Chhatrapati Sambhajinagar
-</p>
-
-<p>
-<i class="fab fa-instagram"></i>
-@sky.foundation_
-</p>
-
-</div>
-
-<div>
-
-<iframe
-src="https://maps.google.com/maps?q=Kannad%20Maharashtra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="320"
-style="border:0;"
-loading="lazy">
-</iframe>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-<img src="20240501_182828.png" alt="Sky Foundation Logo" width="80">
-
-<h3>Sky Foundation</h3>
-
-<p>आरोग्य • संघटन • सहकार्य</p>
-
-<p>
-Healthcare • Humanity • Hope
-</p>
-
-<div class="footer-social">
-
-<a href="https://www.instagram.com/sky.foundation_">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://wa.me/919049343193">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="tel:8888560080">
-<i class="fas fa-phone"></i>
-</a>
-
-</div>
-
-<p style="margin-top:20px;">
-© 2026 Sky Foundation. All Rights Reserved.
-</p>
-
-</div>
-
-</footer>
-
-<script src="script.js"></script>
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo">
+            <h1>स्काय फाउंडेशन (Sky Foundation)</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">मुख्य पृष्ठ</a></li>
+                <li><a href="#about">आमच्याबद्दल</a></li>
+                <li><a href="#work">उपक्रम</a></li>
+                <li><a href="#contact">संपर्क</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>समाजाच्या विकासासाठी एकत्र येऊया</h2>
+        <p>स्काय फाउंडेशन - समाजसेवा, आरोग्य, शिक्षण आणि सामाजिक प्रगतीसाठी कटिबद्ध.</p>
+        <a href="#contact" class="btn">आमच्याशी जोडा</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">आमच्याबद्दल</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+            स्काय फाउंडेशन ही संस्था सामाजिक बांधिलकी जपत विविध क्षेत्रात कार्य करते. समाजातील गरजू घटकांना मदत करणे आणि सकारात्मक बदल घडवून आणणे हे आमचे उद्दिष्ट आहे.
+        </p>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>आमचे ध्येय (Mission)</h3>
+                <p>समाजातील प्रत्येक घटकापर्यंत मदत पोहोचवणे आणि शिक्षण व आरोग्याच्या सुविधा उपलब्ध करून देणे.</p>
+            </div>
+            <div class="card">
+                <h3>आमची दृष्टी (Vision)</h3>
+                <p>एक सक्षम, सुशिक्षित आणि निरोगी समाज घडवणे जिथे प्रत्येकाला प्रगतीची समान संधी मिळेल.</p>
+            </div>
+            <div class="card">
+                <h3>आमचे मूल्य (Values)</h3>
+                <p>पारदर्शकता, समर्पण, सामाजिक बांधिलकी आणि अखंड सेवाभाव.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities/Work Section -->
+    <section id="work">
+        <h2 class="section-title">आमचे सामाजिक उपक्रम</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>आरोग्य व वैद्यकीय मदत</h3>
+                <p>मोफत आरोग्य तपासणी शिबिरे आणि गरजू रुग्णांना वैद्यकीय मदत पुरवणे.</p>
+            </div>
+            <div class="card">
+                <h3>शिक्षण व क्रीडा</h3>
+                <p>विद्यार्थ्यांसाठी शैक्षणिक साहित्य वाटप आणि विविध उपक्रमांचे आयोजन.</p>
+            </div>
+            <div class="card">
+                <h3>सामाजिक व सांस्कृतिक कार्यक्रम</h3>
+                <p>विविध सण, उत्सव आणि सामाजिक जागृतीचे कार्यक्रम यशस्वीपणे आयोजित करणे.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">संपर्क करा</h2>
+        <div class="contact-info">
+            <p><strong>पत्ता:</strong> पुणे, महाराष्ट्र</p>
+            <p><strong>ईमेल:</strong> contact@skyfoundation.org</p>
+            <p><strong>फोन:</strong> +91 XXXXXXXXXX</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 स्काय फाउंडेशन (Sky Foundation). सर्व हक्क सुरक्षित.</p>
+    </footer>
 
 </body>
-                                            </html>
+  </html>
