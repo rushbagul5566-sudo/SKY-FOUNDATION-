@@ -1,56 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Sky Foundation | Serving Humanity</title>
 
-  <meta name="description" content="Sky Foundation NGO Maharashtra">
-  <meta name="theme-color" content="#0EA5E9">
+  <meta name="description"
+        content="Sky Foundation - NGO working for Healthcare, Blood Donation, Education, Tree Plantation and Social Welfare across Maharashtra.">
 
-  <link rel="stylesheet" href="style.css">
+  <meta name="keywords"
+        content="Sky Foundation, NGO Maharashtra, Blood Donation, Healthcare, Education, Tree Plantation">
 
+  <meta name="author" content="Sky Foundation">
+
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sky Foundation">
+  <meta property="og:description"
+        content="Serving Humanity With Care & Compassion.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png">
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
   <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Loader -->
+<!-- ===========================
+     Loading Screen
+============================ -->
 
 <div id="loader">
 
+    <div class="loader-box">
+
+        <img src="images/logo.png"
+             class="loader-logo"
+             alt="Sky Foundation Logo">
+
+        <h2>Sky Foundation</h2>
+
+        <span>Serving Humanity</span>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+    </div>
 
 </div>
 
-<!-- Header -->
+<!-- ===========================
+Header
+============================ -->
 
-<header class="header">
+<header id="header">
 
 <div class="container">
 
-<a href="#" class="logo">
+<div class="logo">
 
-<img src="assets/logo.png" alt="Logo">
+<img src="images/logo.png"
+alt="Sky Foundation">
 
 <div>
 
 <h2>Sky Foundation</h2>
 
-<span>Serving Humanity</span>
+<p>Serving Humanity</p>
 
 </div>
 
-</a>
+</div>
 
-<nav>
+<nav id="navbar">
 
 <ul>
 
@@ -58,11 +98,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <li><a href="#about">About</a></li>
 
+<li><a href="#mission">Mission</a></li>
+
 <li><a href="#services">Services</a></li>
 
 <li><a href="#gallery">Gallery</a></li>
 
 <li><a href="#events">Events</a></li>
+
+<li><a href="#team">Team</a></li>
 
 <li><a href="#contact">Contact</a></li>
 
@@ -70,9 +114,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 </nav>
 
-<a href="#donate" class="donate-btn">Donate</a>
+<div class="header-buttons">
 
-<div class="menu-btn">
+<button id="darkMode">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+<a href="#donate" class="donate-btn">
+
+Donate
+
+</a>
+
+<div id="menuBtn">
 
 <i class="fas fa-bars"></i>
 
@@ -80,17 +136,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 </div>
 
+</div>
+
 </header>
 
-<!-- Hero -->
+<!-- ===========================
+Hero Section
+============================ -->
 
-<section class="hero" id="home">
+<section id="home" class="hero">
 
 <div class="hero-overlay"></div>
 
 <div class="container hero-content">
 
-<h4>Welcome to Sky Foundation</h4>
+<div class="hero-left">
+
+<span class="badge">
+
+❤️ NGO • Healthcare • Humanity
+
+</span>
 
 <h1>
 
@@ -102,339 +168,295 @@ Together We Can
 
 <p>
 
-Healthcare • Education • Blood Donation • Tree Plantation • Social Welfare
+Sky Foundation is dedicated to Healthcare,
+Blood Donation,
+Education,
+Tree Plantation
+and Social Welfare across Maharashtra.
 
 </p>
 
 <div class="hero-buttons">
 
-<a href="#about" class="btn">Know More</a>
+<a href="#about" class="primary-btn">
 
-<a href="#volunteer" class="btn2">Become Volunteer</a>
-
-</div>
-
-</div>
-
-</section>
-    <!-- =========================
-     ABOUT SECTION
-========================== -->
-
-<section id="about" class="about">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span>ABOUT US</span>
-
-            <h2>Sky Foundation</h2>
-
-            <p>
-                Sky Foundation is a registered NGO dedicated to healthcare,
-                education, environmental protection, blood donation,
-                women empowerment and humanitarian services across Maharashtra.
-            </p>
-
-        </div>
-
-        <div class="about-wrapper">
-
-            <div class="about-image">
-
-                <img src="assets/images/about.jpg" alt="About Sky Foundation">
-
-            </div>
-
-            <div class="about-content">
-
-                <h3>Serving Humanity With Compassion ❤️</h3>
-
-                <p>
-                    We believe every person deserves healthcare, education
-                    and equal opportunities. Our volunteers work together
-                    to create a better future for society.
-                </p>
-
-                <div class="about-features">
-
-                    <div class="feature">
-                        <i class="fas fa-heart"></i>
-                        <span>Healthcare Support
-<!-- =========================
-     SERVICES SECTION
-========================== -->
-
-<section id="services" class="services">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span>OUR SERVICES</span>
-
-            <h2>How We Serve Society</h2>
-
-            <p>
-                Sky Foundation is committed to improving lives through healthcare,
-                education, environmental protection and humanitarian initiatives.
-            </p>
-
-        </div>
-
-        <div class="services-grid">
-
-            <div class="service-card">
-                <i class="fas fa-user-nurse"></i>
-                <h3>Healthcare</h3>
-                <p>Home healthcare, medical camps, nursing support and patient care.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-hand-holding-medical"></i>
-                <h3>Blood Donation</h3>
-                <p>Emergency blood donor network and regular donation camps.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-school"></i>
-                <h3>Education</h3>
-                <p>Educational support, scholarships and awareness programs.</p>
-                                                                                </div>
-                            <!-- =========================
-     GALLERY SECTION
-========================== -->
-
-<section id="gallery" class="gallery">
-
-    <div class="container">
-
-        <div class="section-header">
-            <span>OUR GALLERY</span>
-            <h2>Our Recent Activities</h2>
-            <p>Moments captured while serving humanity.</p>
-        </div>
-
-        <div class="gallery-grid">
-
-            <div class="gallery-item">
-                <img src="assets/gallery/gallery1.jpg" alt="Blood Donation Camp">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/gallery/gallery2.jpg" alt="Tree Plantation">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/gallery/gallery3.jpg" alt="Healthcare Camp">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/gallery/gallery4.jpg" alt="Food Distribution">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/gallery/gallery5.jpg" alt="Education Support">
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/gallery/gallery6.jpg" alt="Volunteer Activity">
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     EVENTS SECTION
-========================== -->
-
-<section id="events" class="events">
-
-    <div class="container">
-
-        <div class="section-header">
-            <span>UPCOMING EVENTS</span>
-            <h2>Join Our Mission
-     <<!-- =========================
-     VOLUNTEER SECTION
-========================== -->
-
-<section id="volunteer" class="volunteer">
-
-    <div class="container">
-
-        <div class="section-header">
-            <span>JOIN US</span>
-            <h2>Become a Volunteer</h2>
-            <p>Together we can make a difference.</p>
-        </div>
-
-        <form id="volunteerForm">
-
-            <input type="text" placeholder="Full Name" required>
-
-            <input type="tel" placeholder="Mobile Number" required>
-
-            <input type="email" placeholder="Email Address">
-
-            <input type="text" placeholder="City">
-
-            <textarea rows="5" placeholder="Why do you want to join Sky Foundation?"></textarea>
-
-            <button type="submit" class="btn">
-                Submit
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     DONATION
-========================== -->
-
-<section id="donate" class="donate">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span>DONATE</span>
-
-            <h2>Support Our Mission</h2>
-
-        </div>
-
-        <div class="donate-box">
-
-            <img src="assets/qr.png" alt="UPI QR">
-
-            <h3>Scan & Donate</h3>
-
-            <p>Your support helps us serve more people.</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     CONTACT
-========================== -->
-
-<section id="contact" class="contact">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span>CONTACT</span>
-
-            <h2>Get In Touch</h2>
-
-        </div>
-
-        <div class="contact-grid">
-
-            <div class="contact-card">
-
-                <i class="fas fa-map-marker-alt"></i>
-
-                <h3>Address</h3>
-
-                <p>Karanjkhed, Tal. Kannad,<br>
-                Dist. Chhatrapati Sambhajinagar,<br>
-                Maharashtra</p>
-
-            </div>
-
-            <div class="contact-card">
-
-                <i class="fas fa-phone"></i>
-
-                <h3>Phone</h3>
-
-                <p>+91 8888560080</p>
-
-            </div>
-
-            <div class="contact-card">
-
-                <i class="fas fa-envelope"></i>
-
-                <h3>Email</h3>
-
-                <p>skyfoundationhelp11@gmail.com</p>
-
-            </div>
-
-        </div>
-
-        <div class="map">
-
-            <!-- तुमचा Google Maps Embed Code येथे टाका -->
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer class="footer">
-
-    <div class="container">
-
-        <img src="assets/logo.png" alt="Logo" class="footer-logo">
-
-        <h2>Sky Foundation</h2>
-
-        <p>Serving Humanity With Care & Compassion</p>
-
-        <div class="social-icons">
-
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-
-        </div>
-
-        <p class="copyright">
-            © 2026 Sky Foundation. All Rights Reserved.
-        </p>
-
-    </div>
-
-</footer>
-
-<!-- WhatsApp Button -->
-
-<a href="https://wa.me/919049343193" class="whatsapp" target="_blank">
-
-    <i class="fab fa-whatsapp"></i>
+Explore More
 
 </a>
 
-<!-- Back To Top -->
+<a href="#volunteer" class="secondary-btn">
+
+Become Volunteer
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+
+<h3>5000+</h3>
+
+<p>Families Helped</p>
+
+</div>
+
+<div>
+
+<h3>100+</h3>
+
+<p>Blood Camps</p>
+
+</div>
+
+<div>
+
+<h3>25000+</h3>
+
+<p>Trees Planted</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="glass-card">
+
+<img src="images/hero.png"
+alt="Sky Foundation">
+
+</div>
+
+</div>
+
+</div>
+
+  </section>
+  <!-- ===========================
+About Section
+=========================== -->
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-title">
+      <span>About Us</span>
+      <h2>Sky Foundation</h2>
+      <p>
+        Sky Foundation is a social organization committed to serving humanity
+        through healthcare, education, blood donation, environmental
+        conservation, and community welfare across Maharashtra.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <i class="fas fa-heart"></i>
+        <h3>Healthcare</h3>
+        <p>Providing quality healthcare support and home care services.</p>
+     <!-- ===========================
+<!-- ===========================
+Gallery
+=========================== -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="section-title">
+      <span>Gallery</span>
+      <h2>Our Activities</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <img src="images/gallery1.jpg" alt="Healthcare Camp">
+      <img src="images/gallery2.jpg" alt="Blood Donation">
+      <img src="images/gallery3.jpg" alt="Tree Plantation">
+      <img src="images/gallery4.jpg" alt="Education">
+      <img src="images/gallery5.jpg" alt="Volunteers">
+      <img src="images/gallery6.jpg" alt="Social Work">
+    </div>
+  </div>
+</section>
+
+<!-- Events -->
+<section id="events" class="section light-bg">
+  <div class="container">
+    <div class="section-title">
+      <span>Events</span>
+      <h2>Upcoming Events</h2>
+    </div>
+
+    <div class="events-grid">
+
+      <div class="event-card">
+        <h3>Blood Donation Camp</h3>
+        <p>Join us and help save lives through voluntary blood donation.</p>
+      </div>
+
+      <div class="event-card">
+        <h3>Tree Plantation Drive</h3>
+        <p>Let's build a greener Maharashtra together.</p>
+      </div>
+
+      <div class="event-card">
+        <h3>Health Checkup Camp</h3>
+        <p>Free health checkup for needy people.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team" class="section">
+  <div class="container">
+    <div class="section-title">
+      <span>Our Team</span>
+      <h2>Meet Our Members</h2>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img src="images/team1.jpg" alt="">
+        <h3>Founder</h3>
+        <p>Sky Foundation</p>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team2.jpg" alt="">
+        <h3>Volunteer</h3>
+        <p>Healthcare Team</p>
+      </div>
+
+      <div class="team-card">
+        <img src="images/team3.jpg" alt="">
+        <h3>Coordinator</h3>
+        <p>Social Activities</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Volunteer -->
+<section id="volunteer" class="section light-bg">
+  <div class="container">
+
+    <div class="section-title">
+      <span>Volunteer</span>
+      <h2>Become A Volunteer</h2>
+    </div>
+
+    <form class="contact-form">
+
+      <input type="text" placeholder="Full Name" required>
+
+      <input type="email" placeholder="Email Address" required>
+
+      <input type="tel" placeholder="Mobile Number" required>
+
+      <textarea placeholder="Why do you want to join?" rows="5"></textarea>
+
+      <button type="submit">Submit</button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- Donate -->
+<section id="donate" class="section">
+  <div class="container">
+
+    <div class="section-title">
+      <span>Donate</span>
+      <h2>Support Our Mission</h2>
+    </div>
+
+    <div class="donate-box">
+
+      <img src="images/upi-qr.png" alt="UPI QR">
+
+      <p>Scan the QR Code to Donate.</p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Contact</span>
+
+<h2>Get In Touch</h2>
+
+</div>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Email" required>
+
+<textarea rows="6" placeholder="Your Message"></textarea>
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=Pune&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<h2>Sky Foundation</h2>
+
+<p>Serving Humanity With Care & Compassion.</p>
+
+<p>© 2026 Sky Foundation. All Rights Reserved.</p>
+
+</div>
+
+</footer>
+
+<a href="https://wa.me/919999999999"
+class="whatsapp"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
 
 <button id="topBtn">
 
-    <i class="fas fa-arrow-up"></i>
+<i class="fas fa-arrow-up"></i>
 
 </button>
 
 <script src="script.js"></script>
 
 </body>
-  </html>
+      </html>
