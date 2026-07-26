@@ -1,101 +1,107 @@
-
 // ===============================
-// Sky Foundation Premium Script
+// SKY FOUNDATION PREMIUM JS
 // ===============================
 
 // Loader
+
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
-    if (loader) {
-        setTimeout(() => {
-            loader.style.opacity = "0";
-            loader.style.visibility = "hidden";
-
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 500);
-
-        }, 1200);
-    }
+    setTimeout(() => {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+    }, 1200);
 });
 
 // Mobile Menu
-const menuBtn = document.getElementById("menuBtn");
-const navbar = document.getElementById("navbar");
 
-if (menuBtn && navbar) {
-    menuBtn.onclick = () => {
-        navbar.classList.toggle("show");
-    };
-}
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
 
-// Dark Mode
-const darkBtn = document.getElementById("darkMode");
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("showMenu");
+});
 
-if (darkBtn) {
-    darkBtn.onclick = () => {
-        document.body.classList.toggle("dark");
-    };
-}
-
-// Back To Top
-const topBtn = document.getElementById("topBtn");
+// Sticky Header
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 300) {
-        if (topBtn) topBtn.style.display = "flex";
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 50) {
+        header.classList.add("sticky");
     } else {
-        if (topBtn) topBtn.style.display = "none";
+        header.classList.remove("sticky");
     }
 
 });
 
-if (topBtn) {
-    topBtn.onclick = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    };
-}
+// Animated Counter
 
-// Header Shadow
-const header = document.getElementById("header");
+const counters = document.querySelectorAll(".hero-stats h2");
+
+const speed = 150;
+
+counters.forEach(counter => {
+
+    const animate = () => {
+
+        const target = +counter.innerText.replace(/\D/g, "");
+
+        const count = +counter.innerText.replace(/\D/g, "");
+
+        const increment = target / speed;
+
+        if (count < target) {
+
+            counter.innerText = Math.ceil(count + increment);
+
+            setTimeout(animate, 20);
+
+        } else {
+
+            counter.innerText = target + "+";
+
+        }
+
+    };
+
+    animate();
+
+});
+
+// Scroll To Top
+
+const topBtn = document.createElement("button");
+
+topBtn.innerHTML = "↑";
+
+topBtn.id = "topBtn";
+
+document.body.appendChild(topBtn);
 
 window.addEventListener("scroll", () => {
 
-    if (header) {
-        if (window.scrollY > 80) {
-            header.style.boxShadow = "0 10px 30px rgba(0,0,0,.15)";
-        } else {
-            header.style.boxShadow = "none";
-        }
+    if (window.scrollY > 500) {
+
+        topBtn.classList.add("show");
+
+    } else {
+
+        topBtn.classList.remove("show");
+
     }
 
 });
 
-// Scroll Animation
-const revealElements = document.querySelectorAll(
-    ".about-card,.service-card,.team-card,.event-card,.mission-box"
-);
+topBtn.onclick = () => {
 
-function reveal() {
+    window.scrollTo({
 
-    revealElements.forEach((el) => {
+        top: 0,
 
-        const top = el.getBoundingClientRect().top;
-
-        if (top < window.innerHeight - 100) {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }
+        behavior: "smooth"
 
     });
 
-}
-
-reveal();
-
-window.addEventListener("scroll", reveal);
+};
