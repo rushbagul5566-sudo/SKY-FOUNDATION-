@@ -1,796 +1,318 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sky Foundation | आरोग्य, संघटन, सहकार्य</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --sky-deep:#0B4A7C;
-    --sky-mid:#1477B8;
-    --sky-light:#3FA9E0;
-    --gold:#E3A83B;
-    --gold-deep:#C9871F;
-    --gold-soft:#F3D9A4;
-    --ink:#0C2233;
-    --ink-soft:#4A5D6B;
-    --paper:#F6F9FC;
-    --paper-deep:#EBF2F8;
-    --white:#FFFFFF;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter','Noto Sans Devanagari',sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  .marathi{ font-family:'Noto Sans Devanagari','Inter',sans-serif; }
-  img{ max-width:100%; display:block; }
-  .container{ max-width:1180px; margin:0 auto; padding:0 clamp(18px,5vw,40px); }
-  a{ text-decoration:none; color:inherit; }
-
-  /* laurel signature motif */
-  .laurel-divider{
-    display:flex; align-items:center; justify-content:center; gap:14px;
-    margin:0 auto 18px; width:fit-content;
-  }
-  .laurel-divider svg{ width:26px; height:26px; opacity:.8; }
-  .laurel-divider .line{ width:36px; height:2px; background:linear-gradient(90deg, transparent, var(--gold), transparent); }
-
-  .eyebrow-label{
-    display:inline-block; color:var(--gold-deep); font-weight:700;
-    letter-spacing:1.6px; font-size:12.5px; text-transform:uppercase;
-    margin-bottom:10px;
-  }
-
-  /* ---------- NAVBAR ---------- */
-  .navbar{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px clamp(16px,4vw,40px);
-    background:rgba(255,255,255,0.96);
-    backdrop-filter:blur(8px);
-    position:sticky; top:0; z-index:100;
-    box-shadow:0 1px 0 rgba(12,34,51,0.06);
-  }
-  .brand{ display:flex; align-items:center; gap:12px; }
-  .logo-ring{
-    width:48px; height:48px; border-radius:50%;
-    background:conic-gradient(from 200deg, var(--gold), var(--sky-mid), var(--gold));
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 10px rgba(20,119,184,0.25);
-    flex-shrink:0;
-  }
-  .logo-ring span{
-    width:40px; height:40px; border-radius:50%; background:var(--white);
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; color:var(--sky-mid); font-size:17px; font-family:'Poppins',sans-serif;
-  }
-  .brand-text h1{
-    font-family:'Poppins',sans-serif; font-size:clamp(17px,4vw,22px);
-    font-weight:700; color:var(--sky-deep); line-height:1.1;
-  }
-  .brand-text p{
-    font-size:clamp(10.5px,2.6vw,12.5px); color:var(--sky-mid); font-weight:600;
-    letter-spacing:.3px;
-  }
-  .nav-links{
-    display:flex; gap:28px; list-style:none;
-  }
-  .nav-links a{
-    font-weight:600; font-size:14.5px; color:var(--ink-soft);
-    transition:color .2s;
-  }
-  .nav-links a:hover{ color:var(--sky-mid); }
-  .nav-actions{ display:flex; align-items:center; gap:14px; }
-  .btn-donate-nav{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg, var(--sky-mid), var(--sky-deep));
-    color:#fff; border:none; padding:10px 20px; border-radius:999px;
-    font-weight:600; font-size:clamp(12px,3vw,14px); cursor:pointer;
-    white-space:nowrap;
-    box-shadow:0 6px 14px rgba(11,74,124,0.28);
-  }
-  .hamburger{
-    width:22px; display:none; flex-direction:column; gap:5px; cursor:pointer;
-  }
-  .hamburger span{ height:2px; background:var(--sky-deep); border-radius:2px; }
-  @media (max-width:880px){
-    .nav-links{ display:none; }
-    .hamburger{ display:flex; }
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    min-height:94vh;
-    display:flex; align-items:flex-end;
-    overflow:hidden;
-    background:
-      linear-gradient(180deg, rgba(9,32,49,0.35) 0%, rgba(9,32,49,0.55) 45%, rgba(6,20,32,0.94) 100%),
-      url('images/about.jpg') center/cover no-repeat;
-  }
-  .hero-inner{
-    position:relative; z-index:2;
-    padding:clamp(28px,6vw,64px) clamp(18px,6vw,64px) clamp(40px,6vw,80px);
-    width:100%;
-  }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.28);
-    backdrop-filter:blur(6px);
-    color:#fff; padding:8px 16px; border-radius:999px;
-    font-size:13px; font-weight:600; letter-spacing:.3px;
-    margin-bottom:20px;
-  }
-  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--gold); }
-  h2.headline{
-    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
-    color:#fff; font-weight:800;
-    font-size:clamp(34px,7vw,58px);
-    line-height:1.12; max-width:780px; margin-bottom:18px;
-  }
-  h2.headline .accent{ color:var(--gold); }
-  .sub{
-    color:rgba(255,255,255,0.88); font-size:clamp(15px,3.4vw,18px);
-    max-width:620px; line-height:1.65; margin-bottom:30px;
-  }
-  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:44px; }
-  .btn-primary{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg, var(--gold), var(--gold-deep));
-    color:#241304; border:none; padding:16px 30px; border-radius:12px;
-    font-weight:700; font-size:15px; cursor:pointer;
-    box-shadow:0 10px 24px rgba(227,168,59,0.35);
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(227,168,59,0.45); }
-  .btn-outline{
-    font-family:'Poppins',sans-serif;
-    background:rgba(255,255,255,0.06); color:#fff; padding:16px 30px; border-radius:12px;
-    font-weight:600; font-size:15px; cursor:pointer;
-    border:1.5px solid rgba(255,255,255,0.5); backdrop-filter:blur(4px);
-    transition:background .2s ease, border-color .2s ease;
-  }
-  .btn-outline:hover{ background:rgba(255,255,255,0.16); border-color:#fff; }
-  .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:760px; }
-  .stat-card{
-    background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.22);
-    backdrop-filter:blur(10px); border-radius:16px; padding:20px 12px; text-align:center;
-    transition:transform .25s ease, background .25s ease;
-  }
-  .stat-card:hover{ transform:translateY(-4px); background:rgba(255,255,255,0.16); }
-  .stat-icon{ font-size:22px; margin-bottom:6px; }
-  .stat-num{ font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(24px,5vw,34px); color:var(--gold); line-height:1; }
-  .stat-label{ color:rgba(255,255,255,0.85); font-size:clamp(11px,2.6vw,13px); margin-top:6px; font-weight:500; }
-  @media (max-width:480px){ .stats{ gap:10px; } .stat-card{ padding:14px 6px; border-radius:12px; } }
-
-  /* ---------- IMPACT BAND ---------- */
-  .impact-band{
-    background:linear-gradient(135deg, var(--sky-deep), var(--sky-mid));
-    padding:56px clamp(18px,5vw,40px);
-  }
-  .impact-grid{
-    max-width:1100px; margin:0 auto;
-    display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
-    text-align:center;
-  }
-  .impact-item h3{
-    font-family:'Poppins',sans-serif; font-size:clamp(28px,5vw,40px); font-weight:800;
-    color:var(--gold-soft);
-  }
-  .impact-item p{ color:rgba(255,255,255,0.85); font-size:14px; font-weight:500; margin-top:4px; }
-  @media (max-width:700px){ .impact-grid{ grid-template-columns:repeat(2,1fr); row-gap:34px; } }
-
-  /* ---------- SECTION GENERIC ---------- */
-  section{ padding:clamp(56px,9vw,96px) 0; }
-  .section-head{ text-align:center; max-width:640px; margin:0 auto 48px; }
-  .section-head h2{
-    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
-    font-size:clamp(26px,5vw,38px); font-weight:800; color:var(--sky-deep); line-height:1.25;
-  }
-  .section-head p{ color:var(--ink-soft); margin-top:12px; font-size:15.5px; line-height:1.6; }
-
-  /* ---------- ABOUT ---------- */
-  .about-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
-  .about-img{ position:relative; }
-  .about-img img{
-    border-radius:20px; box-shadow:0 24px 48px rgba(11,74,124,0.18);
-    aspect-ratio:4/5; object-fit:cover; width:100%;
-  }
-  .about-img::before{
-    content:""; position:absolute; top:-18px; left:-18px; width:90px; height:90px;
-    border:3px solid var(--gold); border-radius:20px; z-index:-1;
-  }
-  .about-copy h2{
-    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
-    font-size:clamp(26px,4.6vw,36px); font-weight:800; color:var(--sky-deep);
-    line-height:1.3; margin-bottom:18px;
-  }
-  .about-copy p{ color:var(--ink-soft); line-height:1.75; font-size:15.5px; margin-bottom:14px; }
-  .focus-list{ list-style:none; margin:22px 0 28px; display:grid; gap:12px; }
-  .focus-list li{ display:flex; align-items:center; gap:12px; font-weight:600; font-size:14.5px; color:var(--ink); }
-  .focus-list li svg{ width:20px; height:20px; flex-shrink:0; color:var(--gold-deep); }
-  @media (max-width:860px){ .about-wrap{ grid-template-columns:1fr; } .about-img::before{ display:none; } }
-
-  /* ---------- MISSION / VISION / VALUES ---------- */
-  .mv-section{ background:var(--paper-deep); }
-  .mv-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-  .mv-card{
-    background:var(--white); border-radius:18px; padding:32px 26px;
-    box-shadow:0 10px 30px rgba(11,74,124,0.08);
-    border-top:4px solid var(--gold);
-    transition:transform .25s ease;
-  }
-  .mv-card:hover{ transform:translateY(-6px); }
-  .mv-card h3{ font-family:'Poppins',sans-serif; color:var(--sky-deep); font-size:19px; font-weight:700; margin-bottom:12px; }
-  .mv-card p{ color:var(--ink-soft); font-size:14.5px; line-height:1.7; }
-  @media (max-width:860px){ .mv-grid{ grid-template-columns:1fr; } }
-
-  /* ---------- PROGRAMS ---------- */
-  .prog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-  .prog-card{
-    background:var(--white); border-radius:20px; overflow:hidden;
-    box-shadow:0 14px 34px rgba(11,74,124,0.10);
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .prog-card:hover{ transform:translateY(-8px); box-shadow:0 22px 46px rgba(11,74,124,0.16); }
-  .prog-img{ height:190px; overflow:hidden; }
-  .prog-img img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
-  .prog-card:hover .prog-img img{ transform:scale(1.06); }
-  .prog-body{ padding:22px 22px 26px; }
-  .prog-body h3{ font-family:'Poppins',sans-serif; font-size:18px; font-weight:700; color:var(--sky-deep); margin-bottom:8px; }
-  .prog-body p{ color:var(--ink-soft); font-size:14px; line-height:1.6; margin-bottom:14px; }
-  .prog-body a{ color:var(--gold-deep); font-weight:700; font-size:14px; }
-  @media (max-width:860px){ .prog-grid{ grid-template-columns:1fr; } }
-
-  /* ---------- CTA BAND ---------- */
-  .cta-band{
-    background:linear-gradient(135deg, var(--gold), var(--gold-deep));
-    text-align:center; padding:64px clamp(18px,5vw,40px);
-  }
-  .cta-band h2{
-    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
-    color:#2A1904; font-size:clamp(24px,4.6vw,34px); font-weight:800; margin-bottom:14px;
-  }
-  .cta-band p{ color:#3A2708; max-width:560px; margin:0 auto 28px; font-size:15.5px; line-height:1.65; }
-  .btn-dark{
-    font-family:'Poppins',sans-serif; background:var(--ink); color:#fff;
-    border:none; padding:16px 34px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer;
-    box-shadow:0 12px 26px rgba(12,34,51,0.3);
-  }
-
-  /* ---------- GALLERY ---------- */
-  .gallery-grid{
-    display:grid; grid-template-columns:repeat(5,1fr); gap:14px;
-  }
-  .gallery-grid img{
-    width:100%; height:220px; object-fit:cover; border-radius:14px;
-    transition:transform .35s ease, box-shadow .35s ease;
-    box-shadow:0 8px 20px rgba(11,74,124,0.10);
-  }
-  .gallery-grid img:hover{ transform:scale(1.04); box-shadow:0 16px 30px rgba(11,74,124,0.2); }
-  @media (max-width:960px){ .gallery-grid{ grid-template-columns:repeat(3,1fr); } .gallery-grid img{ height:160px; } }
-  @media (max-width:600px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
-
-  /* ---------- VOLUNTEER ---------- */
-  .vol-band{
-    background:linear-gradient(135deg, var(--sky-deep), var(--ink));
-    color:#fff; text-align:center; padding:64px clamp(18px,5vw,40px);
-  }
-  .vol-band h2{ font-family:'Poppins',sans-serif; font-size:clamp(24px,4.6vw,34px); font-weight:800; margin-bottom:14px; }
-  .vol-band p{ max-width:560px; margin:0 auto 30px; color:rgba(255,255,255,0.85); font-size:15.5px; line-height:1.65; }
-  .vol-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-  .btn-whatsapp{
-    font-family:'Poppins',sans-serif; background:#25D366; color:#0A2A14;
-    border:none; padding:16px 30px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer;
-    box-shadow:0 10px 24px rgba(37,211,102,0.35);
-  }
-
-  /* ---------- CONTACT ---------- */
-  .contact-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:stretch; }
-  .contact-info{
-    background:var(--white); border-radius:20px; padding:34px;
-    box-shadow:0 14px 34px rgba(11,74,124,0.10);
-  }
-  .contact-info h3{ font-family:'Poppins',sans-serif; color:var(--sky-deep); font-size:20px; font-weight:700; margin-bottom:22px; }
-  .contact-row{ display:flex; gap:14px; align-items:flex-start; margin-bottom:20px; }
-  .contact-row .ic{
-    width:40px; height:40px; border-radius:12px; background:var(--paper-deep);
-    display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--sky-mid);
-  }
-  .contact-row div p{ color:var(--ink-soft); font-size:14.5px; line-height:1.6; }
-  .contact-row div a{ color:var(--sky-mid); font-weight:600; }
-  .map-frame{ border-radius:20px; overflow:hidden; box-shadow:0 14px 34px rgba(11,74,124,0.10); min-height:300px; }
-  .map-frame iframe{ width:100%; height:100%; min-height:300px; border:none; }
-  @media (max-width:860px){ .contact-wrap{ grid-template-columns:1fr; } }
-
-  /* ---------- TEAM ---------- */
-  .team-section{ background:var(--paper-deep); }
-  .team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
-  .team-card{ background:var(--white); border-radius:18px; padding:26px 18px; text-align:center; box-shadow:0 10px 26px rgba(11,74,124,0.08); transition:transform .25s ease; }
-  .team-card:hover{ transform:translateY(-6px); }
-  .team-avatar{ width:86px; height:86px; border-radius:50%; margin:0 auto 16px; background:linear-gradient(135deg,var(--sky-light),var(--sky-deep)); display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:26px; border:3px solid var(--gold-soft); }
-  .team-card h4{ font-family:'Poppins',sans-serif; font-size:16px; color:var(--sky-deep); font-weight:700; margin-bottom:4px; }
-  .team-card p{ color:var(--ink-soft); font-size:13px; font-weight:500; }
-  @media (max-width:860px){ .team-grid{ grid-template-columns:repeat(2,1fr); } }
-
-  /* ---------- TESTIMONIALS ---------- */
-  .test-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  .test-card{ background:var(--white); border-radius:18px; padding:30px 26px; box-shadow:0 10px 28px rgba(11,74,124,0.08); position:relative; }
-  .test-quote{ font-size:34px; color:var(--gold-soft); font-family:Georgia,serif; line-height:0; margin-bottom:10px; display:block; }
-  .test-card p.msg{ color:var(--ink-soft); font-size:14.5px; line-height:1.7; margin-bottom:18px; }
-  .test-person{ display:flex; align-items:center; gap:12px; }
-  .test-avatar{ width:42px; height:42px; border-radius:50%; background:var(--sky-mid); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:'Poppins',sans-serif; font-size:14px; flex-shrink:0; }
-  .test-person strong{ display:block; font-size:14px; color:var(--sky-deep); }
-  .test-person span{ font-size:12.5px; color:var(--ink-soft); }
-  @media (max-width:860px){ .test-grid{ grid-template-columns:1fr; } }
-
-  /* ---------- BLOG / NEWS ---------- */
-  .blog-section{ background:var(--paper-deep); }
-  .blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-  .blog-card{ background:var(--white); border-radius:20px; overflow:hidden; box-shadow:0 14px 34px rgba(11,74,124,0.10); transition:transform .25s ease, box-shadow .25s ease; }
-  .blog-card:hover{ transform:translateY(-8px); box-shadow:0 22px 46px rgba(11,74,124,0.16); }
-  .blog-img{ height:170px; overflow:hidden; }
-  .blog-img img{ width:100%; height:100%; object-fit:cover; }
-  .blog-body{ padding:20px 22px 24px; }
-  .blog-date{ color:var(--gold-deep); font-size:12.5px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; margin-bottom:8px; display:block; }
-  .blog-body h3{ font-family:'Poppins',sans-serif; font-size:17px; font-weight:700; color:var(--sky-deep); margin-bottom:8px; line-height:1.4; }
-  .blog-body p{ color:var(--ink-soft); font-size:14px; line-height:1.6; margin-bottom:12px; }
-  .blog-body a{ color:var(--gold-deep); font-weight:700; font-size:13.5px; }
-  @media (max-width:860px){ .blog-grid{ grid-template-columns:1fr; } }
-
-  /* ---------- FAQ ---------- */
-  .faq-list{ max-width:760px; margin:0 auto; display:grid; gap:14px; }
-  .faq-item{ background:var(--white); border-radius:14px; box-shadow:0 8px 22px rgba(11,74,124,0.07); overflow:hidden; }
-  .faq-q{ display:flex; align-items:center; justify-content:space-between; padding:20px 24px; cursor:pointer; font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:var(--sky-deep); }
-  .faq-q .plus{ font-size:20px; color:var(--gold-deep); transition:transform .25s ease; flex-shrink:0; margin-left:14px; }
-  .faq-item.open .faq-q .plus{ transform:rotate(45deg); }
-  .faq-a{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
-  .faq-a p{ padding:0 24px 20px; color:var(--ink-soft); font-size:14.5px; line-height:1.7; }
-  .faq-item.open .faq-a{ max-height:200px; }
-
-  /* ---------- DONATE FORM ---------- */
-  .donate-section{ background:linear-gradient(135deg, var(--sky-deep), var(--ink)); }
-  .donate-wrap{ max-width:560px; margin:0 auto; background:var(--white); border-radius:22px; padding:38px 32px; box-shadow:0 24px 50px rgba(0,0,0,0.25); }
-  .donate-wrap h3{ font-family:'Poppins',sans-serif; color:var(--sky-deep); font-size:21px; font-weight:700; margin-bottom:6px; text-align:center; }
-  .donate-wrap > p{ color:var(--ink-soft); font-size:14px; text-align:center; margin-bottom:24px; }
-  .amount-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:20px; }
-  .amount-btn{ font-family:'Poppins',sans-serif; background:var(--paper-deep); border:2px solid transparent; border-radius:10px; padding:12px 6px; font-weight:700; color:var(--sky-deep); cursor:pointer; font-size:14px; }
-  .amount-btn.active{ border-color:var(--gold); background:var(--gold-soft); }
-  .form-field{ margin-bottom:16px; }
-  .form-field label{ display:block; font-size:13px; font-weight:600; color:var(--ink); margin-bottom:6px; }
-  .form-field input{ width:100%; padding:13px 14px; border-radius:10px; border:1.5px solid #DCE5EC; font-size:14.5px; font-family:'Inter',sans-serif; }
-  .form-field input:focus{ outline:none; border-color:var(--sky-mid); }
-  .btn-donate-submit{ width:100%; font-family:'Poppins',sans-serif; background:linear-gradient(135deg, var(--gold), var(--gold-deep)); color:#241304; border:none; padding:16px; border-radius:12px; font-weight:700; font-size:15.5px; cursor:pointer; margin-top:6px; box-shadow:0 10px 24px rgba(227,168,59,0.35); }
-
-  /* ---------- FOOTER ---------- */
-  footer{ background:var(--ink); color:rgba(255,255,255,0.75); padding:48px clamp(18px,5vw,40px) 28px; text-align:center; }
-  footer h3{ font-family:'Poppins',sans-serif; color:#fff; font-size:20px; margin-bottom:8px; }
-  footer .tag{ color:var(--gold-soft); font-size:14px; margin-bottom:22px; }
-  .foot-socials{ display:flex; gap:14px; justify-content:center; margin-bottom:26px; }
-  .foot-socials a{
-    width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.08);
-    display:flex; align-items:center; justify-content:center; transition:background .2s;
-  }
-  .foot-socials a:hover{ background:var(--gold); color:var(--ink); }
-  footer .copy{ font-size:13px; color:rgba(255,255,255,0.45); border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sky Foundation - Premium NGO providing healthcare, education, women empowerment & disaster relief across Maharashtra">
+    <meta name="keywords" content="NGO, healthcare, education, women empowerment, disaster relief, Maharashtra, nonprofit">
+    <meta name="author" content="Sky Foundation">
+    <meta name="theme-color" content="#00AEEF">
+    <meta property="og:title" content="Sky Foundation - Serving Humanity with Care">
+    <meta property="og:description" content="Premium NGO dedicated to healthcare, education, women empowerment & social welfare">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sky Foundation">
+    <meta name="twitter:description" content="Serving Humanity with Care & Compassion">
+    <link rel="canonical" href="https://skyfoundation.org">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <title>Sky Foundation | Healthcare, Education & Social Welfare NGO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
 
-  <nav class="navbar">
-    <div class="brand">
-    <div class="logo-ring"><img src="20240501_182828.png" alt="Sky Foundation" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-      <div class="brand-text">
-        <h1>Sky Foundation</h1>
-        <p class="marathi">आरोग्य, संघटन, सहकार्य</p>
-      </div>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <p>Sky Foundation</p>
+        </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#programs">Programs</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#testimonials">Stories</a></li>
-      <li><a href="#blog">News</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#donate">Donate</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="btn-donate-nav">Donate Now</button>
-      <div class="hamburger"><span></span><span></span><span></span></div>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero" style="padding:0;">
-    <div class="hero-inner">
-      <div class="eyebrow"><span class="dot"></span> Together We Can Create Change ❤️</div>
-      <h2 class="headline marathi">आरोग्य, संघटन, <span class="accent">सहकार्य</span></h2>
-      <p class="sub marathi">
-        Sky Foundation ही महाराष्ट्रातील सामाजिक संस्था असून आरोग्य सेवा, शिक्षण,
-        पर्यावरण, महिला सक्षमीकरण आणि समाजकल्याणासाठी कार्यरत आहे.
-      </p>
-      <div class="hero-ctas">
-        <button class="btn-primary">Donate Now</button>
-        <a href="#about"><button class="btn-outline">Explore More</button></a>
-      </div>
-      <div class="stats">
-        <div class="stat-card"><div class="stat-icon">❤️</div><div class="stat-num">15+</div><div class="stat-label">Lives Impacted</div></div>
-        <div class="stat-card"><div class="stat-icon">🤝</div><div class="stat-num">250+</div><div class="stat-label">Volunteers</div></div>
-        <div class="stat-card"><div class="stat-icon">🌱</div><div class="stat-num">75+</div><div class="stat-label">Projects</div></div>
-      </div>
-    </div>
-  </section>
+    <!-- Floating Buttons -->
+    <a href="tel:+918888560080" class="floating-btn call-btn" title="Call Us">
+        <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/919049343193" target="_blank" class="floating-btn whatsapp-btn" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-  <!-- IMPACT BAND -->
-  <div class="impact-band">
-    <div class="impact-grid">
-      <div class="impact-item"><h3>15,000+</h3><p>Lives Supported</p></div>
-      <div class="impact-item"><h3>250+</h3><p>Active Volunteers</p></div>
-      <div class="impact-item"><h3>75+</h3><p>Projects Completed</p></div>
-      <div class="impact-item"><h3>30+</h3><p>Districts Reached</p></div>
-    </div>
-  </div>
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="brand">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>Sky Foundation</h1>
+                    <p class="marathi" id="slogan">आरोग्य, संघटन, सहकार्य</p>
+                </div>
+            </div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container about-wrap">
-      <div class="about-img">
-        <img src="images/about.jpg" alt="Sky Foundation">
-      </div>
-      <div class="about-copy">
-        <span class="eyebrow-label">About Sky Foundation</span>
-        <h2>Serving Humanity with Care & Compassion</h2>
-        <p>Sky Foundation is a Maharashtra based NGO dedicated to healthcare, education, women empowerment, environmental protection and social welfare.</p>
-        <p>We believe every person deserves dignity, hope and equal opportunity.</p>
-        <ul class="focus-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Healthcare & Medical Support</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Education for Children</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Women Empowerment</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Environmental Awareness</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Emergency Relief Programs</li>
-        </ul>
-        <a href="#volunteer"><button class="btn-primary">Become Volunteer</button></a>
-      </div>
-    </div>
-  </section>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home" data-en="Home" data-mr="होम">Home</a></li>
+                    <li><a href="#about" data-en="About" data-mr="आमच्याबद्दल">About</a></li>
+                    <li><a href="#services" data-en="Services" data-mr="सेवा">Services</a></li>
+                    <li><a href="#projects" data-en="Projects" data-mr="प्रकल्प">Projects</a></li>
+                    <li><a href="#volunteers" data-en="Volunteers" data-mr="स्वयंसेवक">Volunteers</a></li>
+                    <li><a href="#gallery" data-en="Gallery" data-mr="गॅलरी">Gallery</a></li>
+                    <li><a href="#testimonials" data-en="Stories" data-mr="कहानी">Stories</a></li>
+                    <li><a href="#contact" data-en="Contact" data-mr="संपर्क">Contact</a></li>
+                </ul>
+            </nav>
 
-  <!-- MISSION / VISION / VALUES -->
-  <section class="mv-section">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Our Purpose</span>
-        <h2>Mission & Vision</h2>
-        <p>Together we build a healthier, educated and empowered society.</p>
-      </div>
-      <div class="mv-grid">
-        <div class="mv-card">
-          <h3>Our Mission</h3>
-          <p>To provide quality healthcare, education, emergency relief, women empowerment and social support to every needy person.</p>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" title="हिंदी / English">
+                    <i class="fas fa-globe"></i> <span>EN</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" title="Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary" id="donateNavBtn" data-en="Donate" data-mr="दान करा">Donate</button>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <div class="mv-card">
-          <h3>Our Vision</h3>
-          <p>Creating a compassionate Maharashtra where every family has access to healthcare, education and opportunities.</p>
-        </div>
-        <div class="mv-card">
-          <h3>Our Values</h3>
-          <p>Transparency, Humanity, Equality, Compassion and Social Responsibility guide every initiative of Sky Foundation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- PROGRAMS -->
-  <section id="programs">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Our Programs</span>
-        <h2>Featured Projects</h2>
-      </div>
-      <div class="prog-grid">
-        <div class="prog-card">
-          <div class="prog-img"><img src="shatishira-hearing-aid-6797470.jpg" alt="Healthcare Service"></div>
-          <div class="prog-body">
-            <h3>Healthcare Support</h3>
-            <p>Medical camps, home healthcare and patient support.</p>
-            <a href="#">Read More →</a>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span data-en="Together We Can Create Change" data-mr="एकत्रित आपण बदल आणू शकतो">Together We Can Create Change</span>
+            </div>
+            <h1 class="hero-title marathi" data-en="Serving Humanity" data-mr="मानवतेच्या सेवा">
+                Serving Humanity
+                <span class="accent" data-en="with Care & Compassion" data-mr="सहानुभूतीने">with Care & Compassion</span>
+            </h1>
+            <p class="hero-subtitle" data-en="Sky Foundation is dedicated to healthcare, education, women empowerment and social welfare across Maharashtra." data-mr="स्काई फाउंडेशन महाराष्ट्रातील आरोग्यसेवा, शिक्षा, महिला सक्षमीकरण आणि सामाजिक कल्याणासाठी समर्पित आहे.">
+                Sky Foundation is dedicated to healthcare, education, women empowerment and social welfare across Maharashtra.
+            </p>
+            <div class="hero-ctas">
+                <button class="btn btn-primary animate-btn" id="heroDonateBtn" data-en="Donate Now" data-mr="आता दान करा">Donate Now</button>
+                <button class="btn btn-outline" id="heroVolunteerBtn" data-en="Become Volunteer" data-mr="स्वयंसेवक बनाव">Become Volunteer</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15K+</div>
+                    <div class="stat-label" data-en="Lives Impacted" data-mr="जीवन प्रभावित">Lives Impacted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label" data-en="Active Volunteers" data-mr="सक्रिय स्वयंसेवक">Active Volunteers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label" data-en="Projects Done" data-mr="प्रकल्प पूर्ण">Projects Done</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label" data-en="Districts Reached" data-mr="जिल्हे पोचले">Districts Reached</div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
         </div>
-        <div class="prog-card">
-          <div class="prog-img"><img src="akshayapatra-children-306607_1280.jpg" alt="Children Education"></div>
-          <div class="prog-body">
-            <h3>Education</h3>
-            <p>Helping underprivileged children continue education.</p>
-            <a href="#">Read More →</a>
-          </div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-img"><img src="swastikarora-indian-handicraft-7837977_1920.jpg" alt="Women Empowerment"></div>
-          <div class="prog-body">
-            <h3>Women Empowerment</h3>
-            <p>Skill development and self-employment initiatives.</p>
-            <a href="#">Read More →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TEAM -->
-  <section class="team-section" id="team">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Our People</span>
-        <h2>Meet the Team</h2>
-        <p>Dedicated members driving Sky Foundation's mission forward.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-avatar">RB</div>
-          <h4>Rushikesh Bagul</h4>
-          <p>Founder & President</p>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">SP</div>
-          <h4>Sanika Patil</h4>
-          <p>Program Coordinator</p>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">AK</div>
-          <h4>Amol Kale</h4>
-          <p>Healthcare Lead</p>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">PJ</div>
-          <h4>Pooja Jadhav</h4>
-          <p>Volunteer Manager</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-en="Our Foundation" data-mr="आमचा पाया">Our Foundation</span>
+                <h2 data-en="About Sky Foundation" data-mr="स्काय फाउंडेशन बद्दल">About Sky Foundation</h2>
+                <p data-en="Learn about our journey, mission and the impact we create" data-mr="आमच्या यात्रा, मिशन आणि आमच्या प्रभावाबद्दल जानून घ्या">Learn about our journey, mission and the impact we create</p>
+            </div>
 
-  <!-- CTA BAND -->
-  <div class="cta-band">
-    <div class="laurel-divider"><div class="line"></div><span>❤️</span><div class="line"></div></div>
-    <h2>Together We Can Create Change</h2>
-    <p>Your contribution helps us support families with healthcare, education and emergency assistance.</p>
-    <button class="btn-dark">Donate Now</button>
-  </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-en="Who We Are" data-mr="आम्ही कोण आहोत">Who We Are</h3>
+                    <p data-en="Sky Foundation is a registered non-profit organization dedicated to serving humanity. We work across healthcare, education, women empowerment, environmental protection and disaster relief." data-mr="स्काय फाउंडेशन एक नोंदणीकृत गैर-लाभकारी संस्था आहे जी मानवतेच्या सेवेसाठी समर्पित आहे. आम्ही आरोग्यसेवा, शिक्षा, महिला सक्षमीकरण, पर्यावरण संरक्षण आणि आपत्ती मदतीमध्ये कार्य करतो.">
+                        Sky Foundation is a registered non-profit organization dedicated to serving humanity. We work across healthcare, education, women empowerment, environmental protection and disaster relief.
+                    </p>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Their Words</span>
-        <h2>Stories of Hope</h2>
-        <p>What the families and volunteers we've worked with have to say.</p>
-      </div>
-      <div class="test-grid">
-        <div class="test-card">
-          <span class="test-quote">"</span>
-          <p class="msg">Sky Foundation's medical camp gave my father the treatment we could never afford on our own.</p>
-          <div class="test-person">
-            <div class="test-avatar">MK</div>
-            <div><strong>Meena Kadam</strong><span>Kannad, Sambhajinagar</span></div>
-          </div>
-        </div>
-        <div class="test-card">
-          <span class="test-quote">"</span>
-          <p class="msg">Volunteering here taught me that small actions, done together, truly change lives.</p>
-          <div class="test-person">
-            <div class="test-avatar">SD</div>
-            <div><strong>Suresh Deshmukh</strong><span>Volunteer, 2 years</span></div>
-          </div>
-        </div>
-        <div class="test-card">
-          <span class="test-quote">"</span>
-          <p class="msg">Because of their support, my daughter is back in school and dreaming big again.</p>
-          <div class="test-person">
-            <div class="test-avatar">AV</div>
-            <div><strong>Anita Vaidya</strong><span>Parent, Education Program</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <div class="mv-cards">
+                        <div class="mv-card glass">
+                            <div class="mv-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h4 data-en="Our Mission" data-mr="आमचे मिशन">Our Mission</h4>
+                            <p data-en="To provide quality healthcare, education, and emergency relief to every needy person with transparency and compassion." data-mr="प्रत्येक गरजूशी मानवाला गुणवत्तेची आरोग्यसेवा, शिक्षा आणि आपत्ती मदत देणे.">
+                                To provide quality healthcare, education, and emergency relief to every needy person with transparency and compassion.
+                            </p>
+                        </div>
 
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Our Gallery</span>
-        <h2>Moments That Inspire</h2>
-        <p>Every smile tells a story of hope and change.</p>
-      </div>
-      <div class="gallery-grid">
-        <img src="tortugamediaservices-indian-woman-2408609_1920.jpg" alt="Gallery">
-        <img src="zenobresson-kids-3539885.jpg" alt="Gallery">
-        <img src="intelegency-maharashtra-7735705.jpg" alt="Gallery">
-        <img src="jandenouden-woman-755227_1920.jpg" alt="Gallery">
-        <img src="istockphoto-1248915763-612x612.jpg" alt="Gallery">
-      </div>
-    </div>
-  </section>
+                        <div class="mv-card glass">
+                            <div class="mv-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4 data-en="Our Vision" data-mr="आमचे दृष्टिकोन">Our Vision</h4>
+                            <p data-en="Creating a compassionate Maharashtra where every family has access to healthcare, education and equal opportunities." data-mr="एक सहानुभूतीपूर्ण महाराष्ट्र तयार करणे जिथे प्रत्येक कुटुंबाला आरोग्यसेवा, शिक्षा आणि समान संधी उपलब्ध असेल.">
+                                Creating a compassionate Maharashtra where every family has access to healthcare, education and equal opportunities.
+                            </p>
+                        </div>
 
-  <!-- BLOG / NEWS -->
-  <section class="blog-section" id="blog">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Latest Updates</span>
-        <h2>News & Stories</h2>
-        <p>Recent activities and updates from Sky Foundation.</p>
-      </div>
-      <div class="blog-grid">
-        <div class="blog-card">
-          <div class="blog-img"><img src="images/about.jpg" alt="Medical Camp"></div>
-          <div class="blog-body">
-            <span class="blog-date">June 2026</span>
-            <h3>Free Medical Camp Held in Kannad Taluka</h3>
-            <p>Over 300 villagers received free health checkups and medicines during our latest camp.</p>
-            <a href="#">Read More →</a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-img"><img src="akshayapatra-children-306607_1280.jpg" alt="School Kits"></div>
-          <div class="blog-body">
-            <span class="blog-date">May 2026</span>
-            <h3>School Kits Distributed to 150 Children</h3>
-            <p>Bags, books and uniforms handed out to underprivileged students before the new term.</p>
-            <a href="#">Read More →</a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-img"><img src="swastikarora-indian-handicraft-7837977_1920.jpg" alt="Women Training"></div>
-          <div class="blog-body">
-            <span class="blog-date">April 2026</span>
-            <h3>Women's Skill Training Batch Completed</h3>
-            <p>30 women completed handicraft training and received starter kits for self-employment.</p>
-            <a href="#">Read More →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                        <div class="mv-card glass">
+                            <div class="mv-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4 data-en="Our Values" data-mr="आमचे मूल्य">Our Values</h4>
+                            <p data-en="Transparency, Humanity, Equality, Compassion and Social Responsibility guide every initiative of Sky Foundation." data-mr="पारदर्शकता, मानवता, समानता, सहानुभूती आणि सामाजिक जिम्मेदारी हे स्काय फाउंडेशनच्या प्रत्येक उद्योगाचे मार्गदर्शन करते.">
+                                Transparency, Humanity, Equality, Compassion and Social Responsibility guide every initiative of Sky Foundation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- VOLUNTEER -->
-  <div class="vol-band" id="volunteer">
-    <h2>Become a Volunteer</h2>
-    <p>Your time and dedication can transform lives. Join Sky Foundation and make a real impact.</p>
-    <div class="vol-actions">
-      <button class="btn-primary">Join Now</button>
-      <a href="https://wa.me/919049343193"><button class="btn-whatsapp">💬 WhatsApp</button></a>
-    </div>
-  </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                </div>
+            </div>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Have Questions?</span>
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q">How can I donate to Sky Foundation? <span class="plus">+</span></div>
-          <div class="faq-a"><p>You can donate online via the Donate section on this page, or contact us directly by phone or WhatsApp for bank transfer details.</p></div>
+            <div class="timeline">
+                <h3 data-en="Our Journey" data-mr="आमची यात्रा">Our Journey</h3>
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2018</div>
+                        <div class="timeline-content">
+                            <h4 data-en="Founded" data-mr="स्थापित">Founded</h4>
+                            <p data-en="Sky Foundation was established with a vision to serve marginalized communities." data-mr="स्काय फाउंडेशन समाजाच्या हाशिएवर असलेल्या समुदायांच्या सेवेच्या दृष्टिकोनाने स्थापित केले गेले.">Sky Foundation was established with a vision to serve marginalized communities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2019</div>
+                        <div class="timeline-content">
+                            <h4 data-en="First Medical Camp" data-mr="पहली वैद्यकीय शिबिर">First Medical Camp</h4>
+                            <p data-en="Organized first health camp reaching 500+ villagers across Sambhajinagar district." data-mr="संभाजिनगर जिल्ह्यातील 500+ गावकरींपर्यंत पोचलेली पहिली आरोग्य शिबिर आयोजित केली.">Organized first health camp reaching 500+ villagers across Sambhajinagar district.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2021</div>
+                        <div class="timeline-content">
+                            <h4 data-en="Education Program Launch" data-mr="शिक्षा कार्यक्रम सुरुवात">Education Program Launch</h4>
+                            <p data-en="Started education support program helping 200+ underprivileged children." data-mr="200+ गरीब मुलांना शिक्षा मदत देणारा कार्यक्रम सुरु केला.">Started education support program helping 200+ underprivileged children.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2023</div>
+                        <div class="timeline-content">
+                            <h4 data-en="Women Empowerment" data-mr="महिला सक्षमीकरण">Women Empowerment</h4>
+                            <p data-en="Launched skill development program benefiting 300+ women across 15 districts." data-mr="15 जिल्ह्यातील 300+ महिलांना लाभ देणारा कौशल्य विकास कार्यक्रम सुरु केला.">Launched skill development program benefiting 300+ women across 15 districts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q">Is my donation tax-deductible? <span class="plus">+</span></div>
-          <div class="faq-a"><p>Yes, donations to Sky Foundation are eligible for tax benefits. A receipt will be provided for every contribution.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">How can I become a volunteer? <span class="plus">+</span></div>
-          <div class="faq-a"><p>Tap "Join Now" in the Volunteer section or message us on WhatsApp — our team will guide you through onboarding.</p></div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Which areas does Sky Foundation work in? <span class="plus">+</span></div>
-          <div class="faq-a"><p>We are based in Chhatrapati Sambhajinagar district and currently active across 30+ districts in Maharashtra.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DONATE FORM -->
-  <section class="donate-section" id="donate">
-    <div class="container">
-      <div class="donate-wrap">
-        <h3>Make a Donation</h3>
-        <p>Every contribution helps a family in need.</p>
-        <div class="amount-row">
-          <button class="amount-btn active">₹500</button>
-          <button class="amount-btn">₹1000</button>
-          <button class="amount-btn">₹2500</button>
-          <button class="amount-btn">₹5000</button>
-        </div>
-        <div class="form-field">
-          <label>Full Name</label>
-          <input type="text" placeholder="Your name">
-        </div>
-        <div class="form-field">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 XXXXX XXXXX">
-        </div>
-        <div class="form-field">
-          <label>Email</label>
-          <input type="email" placeholder="you@example.com">
-        </div>
-        <button class="btn-donate-submit">Proceed to Donate</button>
-      </div>
-    </div>
-  </section>
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-en="What We Do" data-mr="आम्ही काय करतो">What We Do</span>
+                <h2 data-en="Our Services" data-mr="आमची सेवा">Our Services</h2>
+                <p data-en="Comprehensive programs designed to transform lives and communities" data-mr="जीवन आणि समुदायांचे रूपांतर करण्यासाठी डिজाइन केलेले व्यापक कार्यक्रम">Comprehensive programs designed to transform lives and communities</p>
+            </div>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow-label">Get in Touch</span>
-        <h2>Contact Us</h2>
-      </div>
-      <div class="contact-wrap">
-        <div class="contact-info">
-          <h3>Reach Sky Foundation</h3>
-          <div class="contact-row">
-            <div class="ic">📍</div>
-            <div><p>Karanjkhed, Tal. Kannad,<br>Dist. Chhatrapati Sambhajinagar,<br>Maharashtra</p></div>
-          </div>
-          <div class="contact-row">
-            <div class="ic">📞</div>
-            <div><a href="tel:+918888560080">+91 88885 60080</a></div>
-          </div>
-          <div class="contact-row">
-            <div class="ic">📧</div>
-            <div><a href="mailto:support.skyhealthcare@gmail.com">support.skyhealthcare@gmail.com</a></div>
-          </div>
-          <div class="contact-row">
-            <div class="ic">💬</div>
-            <div><a href="https://wa.me/919049343193">Chat on WhatsApp</a></div>
-          </div>
+            <div class="services-grid">
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 data-en="Health Camps" data-mr="आरोग्य शिबिर">Health Camps</h3>
+                    <p data-en="Free medical check-ups, diagnostics and medicines for rural communities." data-mr="ग्रामीण समुदायांसाठी विनामूल्य वैद्यकीय तपासणी, निदान आणि औषधे.">Free medical check-ups, diagnostics and medicines for rural communities.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 data-en="Home Healthcare" data-mr="घरातील आरोग्यसेवा">Home Healthcare</h3>
+                    <p data-en="Medical support and care for elderly and bedridden patients at home." data-mr="वृद्ध आणि बेड्‌वर असलेल्या रोगींसाठी घरी वैद्यकीय सहायता आणि काळजी.">Medical support and care for elderly and bedridden patients at home.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 data-en="Education Support" data-mr="शिक्षा मदत">Education Support</h3>
+                    <p data-en="Scholarships, study materials and tuition for underprivileged children." data-mr="गरीब मुलांसाठी शिष्यवृत्ती, अभ्यास सामग्री आणि ट्यूशन.">Scholarships, study materials and tuition for underprivileged children.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3 data-en="Women Empowerment" data-mr="महिला सक्षमीकरण">Women Empowerment</h3>
+                    <p data-en="Skill training, self-employment and financial literacy programs." data-mr="कौशल्य प्रशिक्षण, स्वरोजगार आणि आर्थिक साक्षरता कार्यक्रम.">Skill training, self-employment and financial literacy programs.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 data-en="Child Welfare" data-mr="बाल कल्याण">Child Welfare</h3>
+                    <p data-en="Nutrition programs, healthcare and protection for underprivileged children." data-mr="गरीब मुलांसाठी पोषण कार्यक्रम, आरोग्यसेवा आणि संरक्षण.">Nutrition programs, healthcare and protection for underprivileged children.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 data-en="Blood Donation" data-mr="रक्त दान">Blood Donation</h3>
+                    <p data-en="Organizing blood donation camps and maintaining blood bank services." data-mr="रक्त दान शिबिर आयोजित करणे आणि रक्त बँक सेवा राखणे.">Organizing blood donation camps and maintaining blood bank services.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 data-en="Disaster Relief" data-mr="आपत्ती मदत">Disaster Relief</h3>
+                    <p data-en="Emergency aid and rehabilitation during natural calamities." data-mr="प्राकृतिक आपत्तीच्या वेळी आपत्कालीन मदत आणि पुनर्वसन.">Emergency aid and rehabilitation during natural calamities.</p>
+                </div>
+
+                <div class="service-card glass">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 data-en="Environment Care" data-mr="पर्यावरण काळजी">Environment Care</h3>
+                    <p data-en="Tree plantation, waste management and environmental awareness programs." data-mr="वृक्षारोपण, कचरा व्यवस्थापन आणि पर्यावरण जागरूकता कार्यक्रम.">Tree plantation, waste management and environmental awareness programs.</p>
+                </div>
+            </div>
         </div>
-        <div class="map-frame">
-          <iframe src="https://maps.google.com/maps?q=Sky%20Healthcare%20Services&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <h3>Sky Foundation</h3>
-    <p class="tag">Serving Humanity with Care & Compassion</p>
-    <div class="foot-socials">
-      <a href="#">f</a><a href="#">in</a><a href="#">yt</a><a href="#">ig</a>
-    </div>
-    <p class="copy">© 2026 Sky Foundation. All Rights Reserved.</p>
-  </footer>
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-en="Our Work" data-mr="आमचे काम">Our Work</span>
+                <h2 data-en="Featured Projects" data-mr="विशेष प्रकल्प">Featured Projects</h2>
+                <p data-en="Real impact stories from communities we serve" data-mr="आमच्या सेवा करत असलेल्या समुदायांतून वास्तविक प्रभाव कहानी">Real impact stories from communities we serve</p>
+            </div>
 
-  <script>
-    document.querySelector('.hamburger').addEventListener('click', function(){
-      const links = document.querySelector('.nav-links');
-      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-      links.style.cssText += 'position:absolute; top:100%; left:0; right:0; flex-direction:column; background:#fff; padding:16px; gap:16px; box-shadow:0 8px 20px rgba(0,0,0,0.08);';
-    });
+            <div class="projects-tabs">
+                <button class="tab-btn active" data-tab="all" data-en="All Projects" data-mr="सर्व प्रकल्प">All Projects</button>
+                <button class="tab-btn" data-tab="completed" data-en="Completed" data-mr="पूर्ण">Completed</button>
+                <button class="tab-btn" data-tab="running" data-en="Running" data-mr="चालू">Running</button>
+                <button class="tab-btn" data-tab="upcoming" data-en="Upcoming" data-mr="आसन्न">Upcoming</button>
+            </div>
 
-    // FAQ accordion
-    document.querySelectorAll('.faq-q').forEach(function(q){
-      q.addEventListener('click', function(){
-        q.parentElement.classList.toggle('open');
-      });
-    });
-
-    // Donation amount selector
-    document.querySelectorAll('.amount-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
+            <div class="projects-grid">
+                <div class="project-card glass" data-project="completed">
+       
