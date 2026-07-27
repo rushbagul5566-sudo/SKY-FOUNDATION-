@@ -1,318 +1,696 @@
+name=index.html
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sky Foundation - Empowering communities through health, organization, and cooperation. आरोग्य, संघटन, सहकार्य">
+    <meta name="keywords" content="NGO, Foundation, Health, Community, Social Impact, Charity">
+    <meta name="author" content="Sky Foundation">
+    <meta name="theme-color" content="#0066ff">
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sky Foundation - Empowering Communities">
+    <meta property="og:description" content="Sky Foundation - Health, Organization, Cooperation. आरोग्य, संघटन, सहकार्य">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/0066ff/ffffff?text=Sky+Foundation">
+    <meta property="og:url" content="https://skyfoundation.org">
+    <meta property="og:site_name" content="Sky Foundation">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sky Foundation - Empowering Communities">
+    <meta name="twitter:description" content="Sky Foundation - Health, Organization, Cooperation. आरोग्य, संघटन, सहकार्य">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/0066ff/ffffff?text=Sky+Foundation">
+    <meta name="twitter:site" content="@SkyFoundation">
+
+    <!-- Schema.org JSON-LD for NGO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Sky Foundation",
+        "url": "https://skyfoundation.org",
+        "logo": "https://via.placeholder.com/70x70/0066ff/ffffff?text=SKY",
+        "description": "Sky Foundation - Empowering communities through health, organization, and cooperation",
+        "sameAs": [
+            "https://www.facebook.com/skyfoundation",
+            "https://www.twitter.com/skyfoundation",
+            "https://www.instagram.com/skyfoundation"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "General Support",
+            "telephone": "+91-XXXXXXXXXX",
+            "email": "hello@skyfoundation.org"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Foundation Building",
+            "addressLocality": "India",
+            "postalCode": "000000",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Sky Foundation - Health, Organization, Cooperation | आरोग्य, संघटन, सहकार्य</title>
+</head>
+<body>
+
+    <!-- ==================== LOADING SCREEN ==================== -->
+    <section id="loading-screen" class="loading-screen" aria-label="Loading Screen">
+        <div class="loader-container">
+            <div class="loader"></div>
+            <p class="loader-text">Sky Foundation</p>
+        </div>
+    </section>
+    <!-- End Loading Screen -->
+
+    <!-- ==================== STICKY GLASS HEADER ==================== -->
+    <header id="header" class="sticky-header" role="banner">
+        <div class="header-container">
+            <!-- Logo and Brand -->
+            <div class="header-brand">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/70x70/0066ff/ffffff?text=SKY" alt="Sky Foundation Logo" width="70" height="70">
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-name">Sky Foundation</h1>
+                    <p class="brand-slogan" lang="mr">आरोग्य, संघटन, सहकार्य</p>
+                </div>
+            </div>
+            <!-- End Logo and Brand -->
+
+            <!-- Navigation -->
+            <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#impact" class="nav-link">Impact</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- End Navigation -->
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <button class="btn btn-call" aria-label="Call Us">
+                    <i class="fas fa-phone"></i>
+                    <span class="btn-text">Call</span>
+                </button>
+                <button class="btn btn-donate" aria-label="Donate">
+                    <i class="fas fa-heart"></i>
+                    <span class="btn-text">Donate</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <!-- End Header Actions -->
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="#hero" class="mobile-nav-link">Home</a></li>
+                <li class="mobile-nav-item"><a href="#about" class="mobile-nav-link">About</a></li>
+                <li class="mobile-nav-item"><a href="#services" class="mobile-nav-link">Services</a></li>
+                <li class="mobile-nav-item"><a href="#impact" class="mobile-nav-link">Impact</a></li>
+                <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-actions">
+                <button class="btn btn-call btn-mobile-full" aria-label="Call Us">
+                    <i class="fas fa-phone"></i> Call Us
+                </button>
+                <button class="btn btn-donate btn-mobile-full" aria-label="Donate">
+                    <i class="fas fa-heart"></i> Donate Now
+                </button>
+            </div>
+        </nav>
+        <!-- End Mobile Menu -->
+    </header>
+    <!-- End Sticky Glass Header -->
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="hero" role="region" aria-label="Hero Section">
+        <!-- Animated Background -->
+        <div class="hero-background">
+            <div class="animated-bg"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+        <!-- End Animated Background -->
+
+        <!-- Hero Content -->
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Main Heading -->
+                <h2 class="hero-heading">
+                    Empowering Communities
+                </h2>
+                <!-- End Main Heading -->
+
+                <!-- Bilingual Subtext -->
+                <p class="hero-subtext">
+                    <span class="text-english">Building a healthier, organized, and cooperative society</span>
+                    <span class="text-marathi" lang="mr">एक स्वस्थ, संघटित आणि सहकारी समाज निर्मिती</span>
+                </p>
+                <!-- End Bilingual Subtext -->
+
+                <!-- Hero Actions -->
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" aria-label="Donate to Sky Foundation">
+                        <i class="fas fa-heart"></i> Donate Now
+                    </button>
+                    <button class="btn btn-secondary btn-large" aria-label="Join as Volunteer">
+                        <i class="fas fa-hands-helping"></i> Become a Volunteer
+                    </button>
+                </div>
+                <!-- End Hero Actions -->
+
+                <!-- Animated Statistics -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50000">0</div>
+                        <p class="stat-label">Lives Impacted</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="150">0</div>
+                        <p class="stat-label">Active Volunteers</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="25">0</div>
+                        <p class="stat-label">Programs</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <p class="stat-label">Years of Service</p>
+                    </div>
+                </div>
+                <!-- End Animated Statistics -->
+            </div>
+        </div>
+        <!-- End Hero Content -->
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" aria-label="Scroll Down">
+            <div class="scroll-dot"></div>
+        </div>
+        <!-- End Scroll Indicator -->
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="about" role="region" aria-label="About Section">
+        <div class="about-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h2 class="section-title">About Sky Foundation</h2>
+                <p class="section-subtitle">Our commitment to positive change</p>
+            </div>
+            <!-- End Section Header -->
+
+            <!-- About Grid -->
+            <div class="about-grid">
+                <!-- Mission Card -->
+                <div class="about-card mission-card">
+                    <div class="card-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h3 class="card-title">Our Mission</h3>
+                    <p class="card-description">
+                        To empower communities through accessible healthcare, organizational development, and cooperative initiatives that foster sustainable positive change.
+                    </p>
+                </div>
+                <!-- End Mission Card -->
+
+                <!-- Vision Card -->
+                <div class="about-card vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="card-title">Our Vision</h3>
+                    <p class="card-description">
+                        A world where every individual has access to quality healthcare, education, and opportunities to grow within a cooperative, inclusive society.
+                    </p>
+                </div>
+                <!-- End Vision Card -->
+
+                <!-- Objectives Card -->
+                <div class="about-card objectives-card">
+                    <div class="card-icon">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <h3 class="card-title">Our Objectives</h3>
+                    <ul class="objectives-list">
+                        <li>Improve healthcare accessibility</li>
+                        <li>Build strong communities</li>
+                        <li>Promote education & skills</li>
+                        <li>Foster cooperation & unity</li>
+                    </ul>
+                </div>
+                <!-- End Objectives Card -->
+
+                <!-- Why Choose Us Card -->
+                <div class="about-card why-us-card">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="card-title">Why Choose Us</h3>
+                    <ul class="why-us-list">
+                        <li><strong>Transparent:</strong> Full accountability</li>
+                        <li><strong>Impactful:</strong> Measurable results</li>
+                        <li><strong>Community-driven:</strong> Local solutions</li>
+                        <li><strong>Dedicated:</strong> Passionate team</li>
+                    </ul>
+                </div>
+                <!-- End Why Choose Us Card -->
+            </div>
+            <!-- End About Grid -->
+        </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+    </html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sky Foundation - Premium NGO providing healthcare, education, women empowerment & disaster relief across Maharashtra">
-    <meta name="keywords" content="NGO, healthcare, education, women empowerment, disaster relief, Maharashtra, nonprofit">
-    <meta name="author" content="Sky Foundation">
-    <meta name="theme-color" content="#00AEEF">
-    <meta property="og:title" content="Sky Foundation - Serving Humanity with Care">
-    <meta property="og:description" content="Premium NGO dedicated to healthcare, education, women empowerment & social welfare">
-    <meta property="og:image" content="assets/logo.png">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sky Foundation">
-    <meta name="twitter:description" content="Serving Humanity with Care & Compassion">
-    <link rel="canonical" href="https://skyfoundation.org">
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <title>Sky Foundation | Healthcare, Education & Social Welfare NGO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Hope Foundation - NGO for Social Change</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
+    <!-- Navigation and Hero from PART 1 -->
+    <!-- (Previous content from Part 1 remains here) -->
 
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loader">
-            <div class="loader-ring"></div>
-            <p>Sky Foundation</p>
-        </div>
-    </div>
+    <!-- PART 2 SECTIONS START -->
 
-    <!-- Floating Buttons -->
-    <a href="tel:+918888560080" class="floating-btn call-btn" title="Call Us">
-        <i class="fas fa-phone"></i>
-    </a>
-    <a href="https://wa.me/919049343193" target="_blank" class="floating-btn whatsapp-btn" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Header/Navbar -->
-    <header class="navbar">
-        <div class="navbar-container">
-            <div class="brand">
-                <div class="logo">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="brand-text">
-                    <h1>Sky Foundation</h1>
-                    <p class="marathi" id="slogan">आरोग्य, संघटन, सहकार्य</p>
-                </div>
-            </div>
-
-            <nav class="nav-menu">
-                <ul class="nav-links">
-                    <li><a href="#home" data-en="Home" data-mr="होम">Home</a></li>
-                    <li><a href="#about" data-en="About" data-mr="आमच्याबद्दल">About</a></li>
-                    <li><a href="#services" data-en="Services" data-mr="सेवा">Services</a></li>
-                    <li><a href="#projects" data-en="Projects" data-mr="प्रकल्प">Projects</a></li>
-                    <li><a href="#volunteers" data-en="Volunteers" data-mr="स्वयंसेवक">Volunteers</a></li>
-                    <li><a href="#gallery" data-en="Gallery" data-mr="गॅलरी">Gallery</a></li>
-                    <li><a href="#testimonials" data-en="Stories" data-mr="कहानी">Stories</a></li>
-                    <li><a href="#contact" data-en="Contact" data-mr="संपर्क">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle" title="हिंदी / English">
-                    <i class="fas fa-globe"></i> <span>EN</span>
-                </button>
-                <button class="theme-toggle" id="themeToggle" title="Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="btn btn-primary" id="donateNavBtn" data-en="Donate" data-mr="दान करा">Donate</button>
-                <button class="hamburger" id="hamburger">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span data-en="Together We Can Create Change" data-mr="एकत्रित आपण बदल आणू शकतो">Together We Can Create Change</span>
-            </div>
-            <h1 class="hero-title marathi" data-en="Serving Humanity" data-mr="मानवतेच्या सेवा">
-                Serving Humanity
-                <span class="accent" data-en="with Care & Compassion" data-mr="सहानुभूतीने">with Care & Compassion</span>
-            </h1>
-            <p class="hero-subtitle" data-en="Sky Foundation is dedicated to healthcare, education, women empowerment and social welfare across Maharashtra." data-mr="स्काई फाउंडेशन महाराष्ट्रातील आरोग्यसेवा, शिक्षा, महिला सक्षमीकरण आणि सामाजिक कल्याणासाठी समर्पित आहे.">
-                Sky Foundation is dedicated to healthcare, education, women empowerment and social welfare across Maharashtra.
-            </p>
-            <div class="hero-ctas">
-                <button class="btn btn-primary animate-btn" id="heroDonateBtn" data-en="Donate Now" data-mr="आता दान करा">Donate Now</button>
-                <button class="btn btn-outline" id="heroVolunteerBtn" data-en="Become Volunteer" data-mr="स्वयंसेवक बनाव">Become Volunteer</button>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">15K+</div>
-                    <div class="stat-label" data-en="Lives Impacted" data-mr="जीवन प्रभावित">Lives Impacted</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">250+</div>
-                    <div class="stat-label" data-en="Active Volunteers" data-mr="सक्रिय स्वयंसेवक">Active Volunteers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">75+</div>
-                    <div class="stat-label" data-en="Projects Done" data-mr="प्रकल्प पूर्ण">Projects Done</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">30+</div>
-                    <div class="stat-label" data-en="Districts Reached" data-mr="जिल्हे पोचले">Districts Reached</div>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="scroll-arrow"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-padding">
+    <!-- 5. SERVICES SECTION -->
+    <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="Our Foundation" data-mr="आमचा पाया">Our Foundation</span>
-                <h2 data-en="About Sky Foundation" data-mr="स्काय फाउंडेशन बद्दल">About Sky Foundation</h2>
-                <p data-en="Learn about our journey, mission and the impact we create" data-mr="आमच्या यात्रा, मिशन आणि आमच्या प्रभावाबद्दल जानून घ्या">Learn about our journey, mission and the impact we create</p>
-            </div>
-
-            <div class="about-content">
-                <div class="about-text">
-                    <h3 data-en="Who We Are" data-mr="आम्ही कोण आहोत">Who We Are</h3>
-                    <p data-en="Sky Foundation is a registered non-profit organization dedicated to serving humanity. We work across healthcare, education, women empowerment, environmental protection and disaster relief." data-mr="स्काय फाउंडेशन एक नोंदणीकृत गैर-लाभकारी संस्था आहे जी मानवतेच्या सेवेसाठी समर्पित आहे. आम्ही आरोग्यसेवा, शिक्षा, महिला सक्षमीकरण, पर्यावरण संरक्षण आणि आपत्ती मदतीमध्ये कार्य करतो.">
-                        Sky Foundation is a registered non-profit organization dedicated to serving humanity. We work across healthcare, education, women empowerment, environmental protection and disaster relief.
-                    </p>
-
-                    <div class="mv-cards">
-                        <div class="mv-card glass">
-                            <div class="mv-icon">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <h4 data-en="Our Mission" data-mr="आमचे मिशन">Our Mission</h4>
-                            <p data-en="To provide quality healthcare, education, and emergency relief to every needy person with transparency and compassion." data-mr="प्रत्येक गरजूशी मानवाला गुणवत्तेची आरोग्यसेवा, शिक्षा आणि आपत्ती मदत देणे.">
-                                To provide quality healthcare, education, and emergency relief to every needy person with transparency and compassion.
-                            </p>
-                        </div>
-
-                        <div class="mv-card glass">
-                            <div class="mv-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h4 data-en="Our Vision" data-mr="आमचे दृष्टिकोन">Our Vision</h4>
-                            <p data-en="Creating a compassionate Maharashtra where every family has access to healthcare, education and equal opportunities." data-mr="एक सहानुभूतीपूर्ण महाराष्ट्र तयार करणे जिथे प्रत्येक कुटुंबाला आरोग्यसेवा, शिक्षा आणि समान संधी उपलब्ध असेल.">
-                                Creating a compassionate Maharashtra where every family has access to healthcare, education and equal opportunities.
-                            </p>
-                        </div>
-
-                        <div class="mv-card glass">
-                            <div class="mv-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <h4 data-en="Our Values" data-mr="आमचे मूल्य">Our Values</h4>
-                            <p data-en="Transparency, Humanity, Equality, Compassion and Social Responsibility guide every initiative of Sky Foundation." data-mr="पारदर्शकता, मानवता, समानता, सहानुभूती आणि सामाजिक जिम्मेदारी हे स्काय फाउंडेशनच्या प्रत्येक उद्योगाचे मार्गदर्शन करते.">
-                                Transparency, Humanity, Equality, Compassion and Social Responsibility guide every initiative of Sky Foundation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline">
-                <h3 data-en="Our Journey" data-mr="आमची यात्रा">Our Journey</h3>
-                <div class="timeline-items">
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2018</div>
-                        <div class="timeline-content">
-                            <h4 data-en="Founded" data-mr="स्थापित">Founded</h4>
-                            <p data-en="Sky Foundation was established with a vision to serve marginalized communities." data-mr="स्काय फाउंडेशन समाजाच्या हाशिएवर असलेल्या समुदायांच्या सेवेच्या दृष्टिकोनाने स्थापित केले गेले.">Sky Foundation was established with a vision to serve marginalized communities.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2019</div>
-                        <div class="timeline-content">
-                            <h4 data-en="First Medical Camp" data-mr="पहली वैद्यकीय शिबिर">First Medical Camp</h4>
-                            <p data-en="Organized first health camp reaching 500+ villagers across Sambhajinagar district." data-mr="संभाजिनगर जिल्ह्यातील 500+ गावकरींपर्यंत पोचलेली पहिली आरोग्य शिबिर आयोजित केली.">Organized first health camp reaching 500+ villagers across Sambhajinagar district.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2021</div>
-                        <div class="timeline-content">
-                            <h4 data-en="Education Program Launch" data-mr="शिक्षा कार्यक्रम सुरुवात">Education Program Launch</h4>
-                            <p data-en="Started education support program helping 200+ underprivileged children." data-mr="200+ गरीब मुलांना शिक्षा मदत देणारा कार्यक्रम सुरु केला.">Started education support program helping 200+ underprivileged children.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">2023</div>
-                        <div class="timeline-content">
-                            <h4 data-en="Women Empowerment" data-mr="महिला सक्षमीकरण">Women Empowerment</h4>
-                            <p data-en="Launched skill development program benefiting 300+ women across 15 districts." data-mr="15 जिल्ह्यातील 300+ महिलांना लाभ देणारा कौशल्य विकास कार्यक्रम सुरु केला.">Launched skill development program benefiting 300+ women across 15 districts.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section-padding bg-light">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="What We Do" data-mr="आम्ही काय करतो">What We Do</span>
-                <h2 data-en="Our Services" data-mr="आमची सेवा">Our Services</h2>
-                <p data-en="Comprehensive programs designed to transform lives and communities" data-mr="जीवन आणि समुदायांचे रूपांतर करण्यासाठी डिজाइन केलेले व्यापक कार्यक्रम">Comprehensive programs designed to transform lives and communities</p>
-            </div>
-
+            <h2>Our Services</h2>
+            <p class="section-subtitle">We provide comprehensive social services to empower communities</p>
+            
             <div class="services-grid">
-                <div class="service-card glass">
+                <!-- Health Camps -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
-                        <i class="fas fa-heartbeat"></i>
+                        <i class="fas fa-hospital"></i>
                     </div>
-                    <h3 data-en="Health Camps" data-mr="आरोग्य शिबिर">Health Camps</h3>
-                    <p data-en="Free medical check-ups, diagnostics and medicines for rural communities." data-mr="ग्रामीण समुदायांसाठी विनामूल्य वैद्यकीय तपासणी, निदान आणि औषधे.">Free medical check-ups, diagnostics and medicines for rural communities.</p>
-                </div>
+                    <h3>Health Camps</h3>
+                    <p>Regular health check-up camps in rural areas providing free medical consultation and basic treatment.</p>
+                </article>
 
-                <div class="service-card glass">
+                <!-- Home Healthcare Support -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3 data-en="Home Healthcare" data-mr="घरातील आरोग्यसेवा">Home Healthcare</h3>
-                    <p data-en="Medical support and care for elderly and bedridden patients at home." data-mr="वृद्ध आणि बेड्‌वर असलेल्या रोगींसाठी घरी वैद्यकीय सहायता आणि काळजी.">Medical support and care for elderly and bedridden patients at home.</p>
-                </div>
+                    <h3>Home Healthcare Support</h3>
+                    <p>Dedicated healthcare professionals visit homes to provide medical care for elderly and bedridden patients.</p>
+                </article>
 
-                <div class="service-card glass">
+                <!-- Elderly Care -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-wheelchair"></i>
                     </div>
-                    <h3 data-en="Education Support" data-mr="शिक्षा मदत">Education Support</h3>
-                    <p data-en="Scholarships, study materials and tuition for underprivileged children." data-mr="गरीब मुलांसाठी शिष्यवृत्ती, अभ्यास सामग्री आणि ट्यूशन.">Scholarships, study materials and tuition for underprivileged children.</p>
-                </div>
+                    <h3>Elderly Care</h3>
+                    <p>Comprehensive support including nutrition, medical aid, and companionship for senior citizens.</p>
+                </article>
 
-                <div class="service-card glass">
+                <!-- Women Empowerment -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
-                        <i class="fas fa-female"></i>
+                        <i class="fas fa-venus"></i>
                     </div>
-                    <h3 data-en="Women Empowerment" data-mr="महिला सक्षमीकरण">Women Empowerment</h3>
-                    <p data-en="Skill training, self-employment and financial literacy programs." data-mr="कौशल्य प्रशिक्षण, स्वरोजगार आणि आर्थिक साक्षरता कार्यक्रम.">Skill training, self-employment and financial literacy programs.</p>
-                </div>
+                    <h3>Women Empowerment</h3>
+                    <p>Skill development, financial literacy, and awareness programs to strengthen women independence.</p>
+                </article>
 
-                <div class="service-card glass">
+                <!-- Child Welfare -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
                         <i class="fas fa-child"></i>
                     </div>
-                    <h3 data-en="Child Welfare" data-mr="बाल कल्याण">Child Welfare</h3>
-                    <p data-en="Nutrition programs, healthcare and protection for underprivileged children." data-mr="गरीब मुलांसाठी पोषण कार्यक्रम, आरोग्यसेवा आणि संरक्षण.">Nutrition programs, healthcare and protection for underprivileged children.</p>
-                </div>
+                    <h3>Child Welfare</h3>
+                    <p>Educational support, nutrition programs, and safe shelter for underprivileged children.</p>
+                </article>
 
-                <div class="service-card glass">
+                <!-- Education Support -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
-                        <i class="fas fa-tint"></i>
+                        <i class="fas fa-book"></i>
                     </div>
-                    <h3 data-en="Blood Donation" data-mr="रक्त दान">Blood Donation</h3>
-                    <p data-en="Organizing blood donation camps and maintaining blood bank services." data-mr="रक्त दान शिबिर आयोजित करणे आणि रक्त बँक सेवा राखणे.">Organizing blood donation camps and maintaining blood bank services.</p>
-                </div>
+                    <h3>Education Support</h3>
+                    <p>Scholarship programs, tuition classes, and learning resources for economically disadvantaged students.</p>
+                </article>
 
-                <div class="service-card glass">
+                <!-- Blood Donation -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                        <i class="fas fa-droplet"></i>
                     </div>
-                    <h3 data-en="Disaster Relief" data-mr="आपत्ती मदत">Disaster Relief</h3>
-                    <p data-en="Emergency aid and rehabilitation during natural calamities." data-mr="प्राकृतिक आपत्तीच्या वेळी आपत्कालीन मदत आणि पुनर्वसन.">Emergency aid and rehabilitation during natural calamities.</p>
-                </div>
+                    <h3>Blood Donation</h3>
+                    <p>Organized blood donation camps connecting donors with patients in critical need.</p>
+                </article>
 
-                <div class="service-card glass">
+                <!-- Disaster Relief -->
+                <article class="service-card glass-card">
                     <div class="service-icon">
-                        <i class="fas fa-leaf"></i>
+                        <i class="fas fa-umbrella"></i>
                     </div>
-                    <h3 data-en="Environment Care" data-mr="पर्यावरण काळजी">Environment Care</h3>
-                    <p data-en="Tree plantation, waste management and environmental awareness programs." data-mr="वृक्षारोपण, कचरा व्यवस्थापन आणि पर्यावरण जागरूकता कार्यक्रम.">Tree plantation, waste management and environmental awareness programs.</p>
+                    <h3>Disaster Relief</h3>
+                    <p>Emergency response and rehabilitation support during natural calamities and crises.</p>
+                </article>
+
+                <!-- Premium Glass Cards -->
+                <article class="service-card glass-card premium">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Premium Services</h3>
+                    <p>Specialized consulting and dedicated support for community development projects.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Our Projects</h2>
+            <p class="section-subtitle">Ongoing and completed initiatives making real impact</p>
+
+            <div class="projects-tabs">
+                <button class="tab-button active" data-tab="completed">Completed</button>
+                <button class="tab-button" data-tab="running">Running</button>
+                <button class="tab-button" data-tab="upcoming">Upcoming</button>
+            </div>
+
+            <!-- Completed Projects -->
+            <div class="tab-content active" id="completed">
+                <div class="projects-grid">
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Rural Water Supply Project</h3>
+                            <p>Completed in 2023 - Provided clean drinking water to 5000+ families</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%;"></div>
+                            </div>
+                            <p class="progress-text">100% Complete</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>School Construction</h3>
+                            <p>Completed in 2022 - Built 3 schools benefiting 1200 students</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%;"></div>
+                            </div>
+                            <p class="progress-text">100% Complete</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Women Skill Training</h3>
+                            <p>Completed in 2023 - Trained 800 women in various skills</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%;"></div>
+                            </div>
+                            <p class="progress-text">100% Complete</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Running Projects -->
+            <div class="tab-content" id="running">
+                <div class="projects-grid">
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Digital Literacy Program</h3>
+                            <p>Currently running - Teaching digital skills to 2000+ youth</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%;"></div>
+                            </div>
+                            <p class="progress-text">65% Complete</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Health Awareness Campaign</h3>
+                            <p>Running since 2024 - Monthly health camps in 15 villages</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%;"></div>
+                            </div>
+                            <p class="progress-text">45% Complete</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Environmental Conservation</h3>
+                            <p>Running since 2024 - Planting trees and cleaning drives</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 55%;"></div>
+                            </div>
+                            <p class="progress-text">55% Complete</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Upcoming Projects -->
+            <div class="tab-content" id="upcoming">
+                <div class="projects-grid">
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Smart Village Initiative</h3>
+                            <p>Starting 2025 - Smart solutions for rural development</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 5%;"></div>
+                            </div>
+                            <p class="progress-text">5% Complete</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Youth Entrepreneurship Hub</h3>
+                            <p>Launching Q1 2025 - Supporting young entrepreneurs</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 10%;"></div>
+                            </div>
+                            <p class="progress-text">10% Complete</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card glass-card">
+                        <div class="project-image"></div>
+                        <div class="project-content">
+                            <h3>Hospital Construction</h3>
+                            <p>Starting 2025 - Modern healthcare facility</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 2%;"></div>
+                            </div>
+                            <p class="progress-text">2% Complete</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Animated Counters -->
+            <div class="counters-section">
+                <div class="counter-card glass-card">
+                    <div class="counter-number" data-target="15000">0</div>
+                    <p class="counter-label">People Helped</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <div class="counter-number" data-target="45">0</div>
+                    <p class="counter-label">Active Projects</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <div class="counter-number" data-target="200">0</div>
+                    <p class="counter-label">Team Members</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <div class="counter-number" data-target="95">0</div>
+                    <p class="counter-label">Success Rate %</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section-padding">
+    <!-- 7. GALLERY SECTION -->
+    <section id="gallery" class="gallery">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="Our Work" data-mr="आमचे काम">Our Work</span>
-                <h2 data-en="Featured Projects" data-mr="विशेष प्रकल्प">Featured Projects</h2>
-                <p data-en="Real impact stories from communities we serve" data-mr="आमच्या सेवा करत असलेल्या समुदायांतून वास्तविक प्रभाव कहानी">Real impact stories from communities we serve</p>
+            <h2>Photo Gallery</h2>
+            <p class="section-subtitle">Visual stories of our impact and community work</p>
+
+            <!-- Category Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-button active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="health">Health</button>
+                <button class="filter-button" data-filter="education">Education</button>
+                <button class="filter-button" data-filter="women">Women</button>
+                <button class="filter-button" data-filter="environment">Environment</button>
             </div>
 
-            <div class="projects-tabs">
-                <button class="tab-btn active" data-tab="all" data-en="All Projects" data-mr="सर्व प्रकल्प">All Projects</button>
-                <button class="tab-btn" data-tab="completed" data-en="Completed" data-mr="पूर्ण">Completed</button>
-                <button class="tab-btn" data-tab="running" data-en="Running" data-mr="चालू">Running</button>
-                <button class="tab-btn" data-tab="upcoming" data-en="Upcoming" data-mr="आसन्न">Upcoming</button>
-            </div>
+            <!-- Responsive Gallery Grid with Masonry Layout -->
+            <div class="gallery-grid masonry-layout">
+                <!-- Health Category -->
+                <figure class="gallery-item glass-card" data-category="health">
+                    <img src="https://via.placeholder.com/400x300?text=Health+Camp" alt="Health Camp Activity" loading="lazy">
+                    <figcaption>Health Camp 2024</figcaption>
+                </figure>
 
-            <div class="projects-grid">
-                <div class="project-card glass" data-project="completed">
-       
+                <figure class="gallery-item glass-card" data-category="health">
+                    <img src="https://via.placeholder.com/400x500?text=Medical+Check" alt="Medical Check-up" loading="lazy">
+                    <figcaption>Medical Check-up Drive</figcaption>
+                </figure>
+
+                <figure class="gallery-item glass-card" data-category="health">
+                    <img src="https://via.placeholder.com/400x300?text=Blood+Donation" alt="Blood Donation Camp" loading="lazy">
+                    <figcaption>Blood Donation Camp</figcaption>
+                </figure>
+
+                <!-- Education Category -->
+                <figure class="gallery-item glass-card" data-category="education">
+                    <img src="https://via.placeholder.com/400x400?text=Student+Learning" alt="Students Learning" loading="lazy">
+                    <figcaption>Educational Support</figcaption>
+                </figure>
+
+                <figure class="gallery-item glass-card" data-category="education">
+                    <img src="https://via.placeholder.com/400x300?text=School+Building" alt="School Building" loading="lazy">
+                    <figcaption>School Construction</figcaption>
+                </figure>
+
+                <figure class="gallery-item glass-card" data-category="education">
+                    <img src="https://via.placeholder.com/400x450?text=Classroom+Session" alt="Classroom Session" loading="lazy">
+                    <figcaption>Digital Literacy Class</figcaption>
+                </figure>
+
+                <!-- Women Category -->
+                <figure class="gallery-item glass-card" data-category="women">
+                    <img src="https://via.placeholder.com/400x350?text=Women+Training" alt="Women Training" loading="lazy">
+                    <figcaption>Women Skill Training</figcaption>
+                </figure>
+
+                <figure class="gallery-item glass-card" data-category="women">
+                    <img src="https://via.placeholder.com/400x300?text=Womens+Workshop" alt="Women Workshop" loading="lazy">
+                    <figcaption>Women Empowerment Workshop</figcaption>
+                </figure>
+
+                <figure class="gallery-item glass-card" data-category="women">
+                    <img src="https://via.placeholder.com/400x500?text=Womens+Group" alt="Women Group" loading="lazy">
+                    <figcaption>Community Women Group</figcaption>
+                </figure>
+
+                <!-- Environment Category -->
+                <figure class="gallery-item glass-card" data-category="environment">
+                    <img src="https://via.placeholder.com/400x300?text=Tree+Planting" alt="Tree Planting" loading="lazy">
+                    <figcaption>Tree Planting Drive</figcaption>
+                </figure>
+
+                <figure class="gallery-item glass-card" data-category="environment">
+                    <img src="https://via.placeholder.com/400x400?text=Cleanup+Drive" alt="Cleanup Drive" loading="lazy">
+                    <figcaption>Community Cleanup</figcaption>
+                </figure>
+
+                <figure class="gallery-item glass-card" data-category="environment">
+                    <img src="https://via.placeholder.com/400x350?text=Environmental+Action" alt="Environmental Action" loading="lazy">
+                    <figcaption>Environmental Conservation</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. VOLUNTEERS SECTION -->
+    <section id="volunteers" class="volunteers">
+        <div class="container">
+            <h2>Join Our Volunteer Team</h2>
+            <p class="section-subtitle">Become part of our mission to create positive change</p>
+
+            <div class="volunteer-form-container glass-card">
+                <form id="volunteerForm" class="volunteer-form" action="#" method="POST">
+                    <fieldset>
+                        <legend>Volunteer Registration Form</legend>
+
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="volunteerName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="volunteerName" name="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <!-- Mobile Field -->
+                        <div class="form-group">
+                            <label for="volunteerMobile">Mobile Number <span class="required">*</span></label>
+                            <input type="tel" id="volunteerMobile" name="mobile" placeholder="Enter your mobile number" required>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="volunteerEmail">Email Address <span class="required">*</span></label>
+                            <input type="email" id="volunteerEmail" name="email" placeholder="Enter your email address" required>
+                        </div>
+
+                        <!-- Skills Field -->
+                        <div class="form-group">
+                            <label for="volunteerSkills">Your Skills <span class="required">*</span></label>
+                            <textarea id="volunteerSkills" name="skills" placeholder="Describe your skills and expertise" rows="3" required></textarea>
+                        </div>
+
+                        <!-- Availability Field -->
+                        <div class="form-group">
+                            <label for="volunteerAvailability">Availability <span class="required">*</span></label>
+                            <select id="volunteerAvailability" name="availability" required>
+                                <option value="">Select your availability</option>
+                                <option value="weekdays">Weekdays</option>
+                                <option value="weekends">Weekends</option>
+                                <option value="full-time">Full Time</option>
+                                <option value="part-time">Part Time</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+
+                        <!-- Experience Field -->
+                        <div class="form-group">
+                            <labe
+                                
